@@ -1,0 +1,16 @@
+---
+const navItems = [
+  { href: "/", label: "Início" },
+  { href: "/ensaios/", label: "Ensaios" },
+  { href: "/temas/", label: "Temas" },
+  { href: "/biblioteca/", label: "Biblioteca" },
+  { href: "/sobre/", label: "Sobre" },
+];
+---
+
+<header class="site-header">
+  <a class="site-title" href="/">Após a Queda</a>
+  <nav aria-label="Navegação principal">
+    {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+  </nav>
+</header>

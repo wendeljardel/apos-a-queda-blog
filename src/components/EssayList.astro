@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  essays: CollectionEntry<"essays">[];
+}
+
+const { essays } = Astro.props;
+const formatter = new Intl.DateTimeFormat("pt-BR", {
+  day: "2-digit",
+  month: "short",
+  year: "numeric",
+});
+---
+
+<ol class="essay-list">
+  {
+    essays.map((essay) => (
+      <li>
+        <a href={`/ensaios/${essay.slug}/`}>
+          <span>{essay.data.title}</span>
+          <time datetime={essay.data.pubDate.toISOString()}>
+            {formatter.format(essay.data.pubDate)}
+          </time>
+        </a>
+        <p>{essay.data.description}</p>
+      </li>
+    ))
+  }
+</ol>

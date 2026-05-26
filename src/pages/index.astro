@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import EssayList from "@components/EssayList.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const essays = (await getCollection("essays", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5);
+---
+
+<BaseLayout>
+  <section class="hero">
+    <p class="eyebrow">Caderno público de ensaios</p>
+    <h1>Após a Queda</h1>
+    <p>
+      Ensaios teológicos, antropológicos e filosóficos sobre pecado original,
+      autoridade, consciência e relações humanas feridas pela vontade de domínio.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>Ensaios recentes</h2>
+      <a href="/ensaios/">Ver todos</a>
+    </div>
+    <EssayList essays={essays} />
+  </section>
+</BaseLayout>

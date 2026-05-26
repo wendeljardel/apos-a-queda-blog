@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const essays = await getCollection("essays", ({ data }) => !data.draft);
+const categories = [...new Set(essays.flatMap((essay) => essay.data.categories))]
+  .sort((a, b) => a.localeCompare(b, "pt-BR"));
+---
+
+<BaseLayout
+  title="Temas"
+  description="Categorias iniciais de investigação do projeto Após a Queda."
+>
+  <section class="page-intro">
+    <p class="eyebrow">Mapa de leitura</p>
+    <h1>Temas</h1>
+    <p>
+      Os textos se organizam ao redor de pecado original, autoridade, consciência,
+      abuso espiritual, poder e relações humanas.
+    </p>
+  </section>
+
+  <ul class="topic-grid">
+    {
+      categories.map((category) => (
+        <li>
+          <span>{category}</span>
+          <small>
+            {essays.filter((essay) => essay.data.categories.includes(category)).length}
+            {" "}
+            texto(s)
+          </small>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

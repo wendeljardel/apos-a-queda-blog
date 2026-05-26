@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const books = await getCollection("books");
+---
+
+<BaseLayout
+  title="Biblioteca"
+  description="Referências intelectuais e leituras centrais do projeto Após a Queda."
+>
+  <section class="page-intro">
+    <p class="eyebrow">Referências</p>
+    <h1>Biblioteca</h1>
+    <p>Autores, livros e conceitos que sustentam a investigação do projeto.</p>
+  </section>
+
+  <ol class="reference-list">
+    {
+      books.map((book) => (
+        <li>
+          <h2>{book.data.title}</h2>
+          <p class="reference-author">{book.data.author}</p>
+          <p>{book.data.description}</p>
+        </li>
+      ))
+    }
+  </ol>
+</BaseLayout>

@@ -1,0 +1,22 @@
+import type { APIRoute } from "astro";
+import rss from "@astrojs/rss";
+import { getCollection } from "astro:content";
+
+export const GET: APIRoute = async (context) => {
+  const essays = (await getCollection("essays", ({ data }) => !data.draft))
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+  return rss({
+    title: "Após a Queda",
+    description:
+      "Ensaios teológicos, antropológicos e filosóficos sobre autoridade, consciência e relações humanas após a Queda.",
+    site: context.site,
+    items: essays.map((essay) => ({
+      title: essay.data.title,
+      description: essay.data.description,
+      pubDate: essay.data.pubDate,
+      link: `/ensaios/${essay.slug}/`,
+      categories: essay.data.categories,
+    })),
+  });
+};

@@ -1,0 +1,43 @@
+---
+import SiteHeader from "@components/SiteHeader.astro";
+import "@styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Após a Queda",
+  description = "Ensaios teológicos, antropológicos e filosóficos sobre autoridade, consciência e relações humanas após a Queda.",
+} = Astro.props;
+
+const pageTitle = title === "Após a Queda" ? title : `${title} | Após a Queda`;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="alternate" type="application/rss+xml" title="Após a Queda" href="/rss.xml" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <SiteHeader />
+    <main class="site-main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>Após a Queda é um arquivo de ensaios em construção.</p>
+    </footer>
+  </body>
+</html>
