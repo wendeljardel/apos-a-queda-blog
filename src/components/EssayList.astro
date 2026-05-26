@@ -3,27 +3,55 @@ import type { CollectionEntry } from "astro:content";
 
 interface Props {
   essays: CollectionEntry<"essays">[];
+  startIndex?: number;
 }
 
-const { essays } = Astro.props;
-const formatter = new Intl.DateTimeFormat("pt-BR", {
-  day: "2-digit",
-  month: "short",
+const { essays, startIndex = 1 } = Astro.props;
+
+const monthFormatter = new Intl.DateTimeFormat("pt-BR", {
+  month: "long",
   year: "numeric",
 });
+const dayFormatter = new Intl.DateTimeFormat("pt-BR", { day: "2-digit" });
+
+const toRoman = (num: number): string => {
+  const map: [number, string][] = [
+    [1000, "M"], [900, "CM"], [500, "D"], [400, "CD"],
+    [100, "C"], [90, "XC"], [50, "L"], [40, "XL"],
+    [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"],
+  ];
+  let n = num;
+  let result = "";
+  for (const [value, symbol] of map) {
+    while (n >= value) {
+      result += symbol;
+      n -= value;
+    }
+  }
+  return result;
+};
 ---
 
-<ol class="essay-list">
+<ol class="essay-list" role="list">
   {
-    essays.map((essay) => (
-      <li>
-        <a href={`/ensaios/${essay.slug}/`}>
-          <span>{essay.data.title}</span>
-          <time datetime={essay.data.pubDate.toISOString()}>
-            {formatter.format(essay.data.pubDate)}
-          </time>
-        </a>
-        <p>{essay.data.description}</p>
+    essays.map((essay, idx) => (
+      <li class="essay-list__item">
+        <div class="essay-list__date">
+          <span class="essay-list__number">№ {toRoman(startIndex + idx)}</span>
+          <span>{dayFormatter.format(essay.data.pubDate)} {monthFormatter.format(essay.data.pubDate)}</span>
+        </div>
+        <div>
+          <h3 class="essay-list__title">
+            <a href={`/ensaios/${essay.id}/`}>{essay.data.title}</a>
+          </h3>
+          <p class="essay-list__excerpt">{essay.data.description}</p>
+          <p class="essay-list__meta">
+            {essay.data.categories.slice(0, 3).map((category) => (
+              <span>{category}</span>
+            ))}
+            <span>{essay.data.readingTime} de leitura</span>
+          </p>
+        </div>
       </li>
     ))
   }

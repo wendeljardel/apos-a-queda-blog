@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import EssayList from "@components/EssayList.astro";
+import Ornament from "@components/Ornament.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 const essays = (await getCollection("essays", ({ data }) => !data.draft))
@@ -11,11 +12,15 @@ const essays = (await getCollection("essays", ({ data }) => !data.draft))
   title="Ensaios"
   description="Lista cronológica dos ensaios publicados em Após a Queda."
 >
-  <section class="page-intro">
-    <p class="eyebrow">Arquivo</p>
-    <h1>Ensaios</h1>
-    <p>Textos longos para leitura lenta, releitura e investigação continuada.</p>
-  </section>
+  <header class="page-intro">
+    <p class="essay__kicker">Arquivo cronológico</p>
+    <h1 class="page-intro__title">Ensaios</h1>
+    <p class="page-intro__sub">
+      Textos longos, abertos e em desenvolvimento — para leitura lenta, releitura e ruminação.
+    </p>
+  </header>
+
+  <Ornament />
 
   <EssayList essays={essays} />
 </BaseLayout>

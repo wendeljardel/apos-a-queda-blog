@@ -1,28 +1,271 @@
 ---
 import { getCollection } from "astro:content";
 import EssayList from "@components/EssayList.astro";
+import Ornament from "@components/Ornament.astro";
+import CrossMark from "@components/CrossMark.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-const essays = (await getCollection("essays", ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 5);
+const allEssays = (await getCollection("essays", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const featured = allEssays[0];
+const archive = allEssays.slice(1);
+
+const featuredDate = featured
+  ? new Intl.DateTimeFormat("pt-BR", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    }).format(featured.data.pubDate)
+  : "";
+
+const toRoman = (num: number): string => {
+  const map: [number, string][] = [
+    [1000, "M"], [900, "CM"], [500, "D"], [400, "CD"],
+    [100, "C"], [90, "XC"], [50, "L"], [40, "XL"],
+    [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"],
+  ];
+  let n = num;
+  let result = "";
+  for (const [value, symbol] of map) {
+    while (n >= value) {
+      result += symbol;
+      n -= value;
+    }
+  }
+  return result;
+};
+const year = toRoman(new Date().getFullYear());
 ---
 
 <BaseLayout>
-  <section class="hero">
-    <p class="eyebrow">Caderno público de ensaios</p>
-    <h1>Após a Queda</h1>
-    <p>
-      Ensaios teológicos, antropológicos e filosóficos sobre pecado original,
-      autoridade, consciência e relações humanas feridas pela vontade de domínio.
+  <section class="masthead" aria-label="Edição corrente">
+    <p class="masthead__line">
+      Anno Domini {year}
+      <span class="masthead__sep">·</span>
+      Caderno I
+      <span class="masthead__sep">·</span>
+      Edição inaugural
+    </p>
+    <div class="masthead__rule" aria-hidden="true">
+      <span></span>
+      <CrossMark size={11} />
+      <span></span>
+    </div>
+  </section>
+
+  <section class="epigraph" aria-label="Epígrafe">
+    <p class="epigraph__text">
+      O pecado original não destrói a necessidade da autoridade, mas corrompe
+      continuamente sua finalidade, desviando-a do serviço para a dominação.
+    </p>
+    <p class="epigraph__cite">
+      Hipótese central · <em>Após a Queda</em>
     </p>
   </section>
 
-  <section class="section">
-    <div class="section-heading">
-      <h2>Ensaios recentes</h2>
-      <a href="/ensaios/">Ver todos</a>
-    </div>
-    <EssayList essays={essays} />
+  <Ornament variant="cross" />
+
+  {
+    featured && (
+      <section class="featured" aria-label="Ensaio em destaque">
+        <p class="featured__kicker">
+          <CrossMark size={10} />
+          <span>Em destaque</span>
+        </p>
+
+        <article class="featured__inner">
+          {featured.data.heroImage && (
+            <figure class="featured__figure">
+              <img
+                src={featured.data.heroImage}
+                alt={featured.data.heroImageAlt ?? featured.data.title}
+                loading="eager"
+              />
+            </figure>
+          )}
+
+          <div class="featured__body">
+            <h2 class="featured__title">
+              <a href={`/ensaios/${featured.id}/`}>{featured.data.title}</a>
+            </h2>
+
+            <p class="featured__lede">{featured.data.description}</p>
+
+            <p class="featured__meta">
+              <time datetime={featured.data.pubDate.toISOString()}>{featuredDate}</time>
+              <span>·</span>
+              <span>{featured.data.readingTime} de leitura</span>
+            </p>
+
+            {featured.data.categories.length > 0 && (
+              <ul class="tag-list featured__tags">
+                {featured.data.categories.slice(0, 3).map((category) => (
+                  <li>{category}</li>
+                ))}
+              </ul>
+            )}
+
+            <p class="featured__cta">
+              <a href={`/ensaios/${featured.id}/`}>Ler o ensaio →</a>
+            </p>
+          </div>
+        </article>
+      </section>
+    )
+  }
+
+  {
+    archive.length > 0 && (
+      <>
+        <Ornament variant="fleuron" />
+
+        <section aria-label="Arquivo">
+          <header class="section-heading">
+            <div class="section-heading__rule">
+              <span>Arquivo</span>
+            </div>
+            <h2>Demais ensaios</h2>
+            <p>Para leitura lenta, releitura e investigação continuada.</p>
+          </header>
+
+          <EssayList essays={archive} startIndex={2} />
+        </section>
+      </>
+    )
+  }
+
+  <Ornament />
+
+  <section aria-label="Hipóteses de trabalho">
+    <header class="section-heading">
+      <div class="section-heading__rule"><span>Hipóteses</span></div>
+      <h2>Frases que orientam o arquivo</h2>
+      <p>
+        Formulações provisórias para pensar autoridade, consciência e relações
+        humanas depois da Queda.
+      </p>
+    </header>
+
+    <ol class="thesis-grid">
+      <li>
+        <span class="thesis-grid__number">I</span>
+        <p>
+          A Queda não elimina a autoridade; ela desordena seu exercício.
+        </p>
+      </li>
+      <li>
+        <span class="thesis-grid__number">II</span>
+        <p>
+          A <em>libido dominandi</em> frequentemente se disfarça de zelo,
+          proteção e responsabilidade.
+        </p>
+      </li>
+      <li>
+        <span class="thesis-grid__number">III</span>
+        <p>
+          A autoridade cristã deve formar consciências, não absorvê-las.
+        </p>
+      </li>
+      <li>
+        <span class="thesis-grid__number">IV</span>
+        <p>
+          O abuso espiritual frequentemente se apresenta como piedade.
+        </p>
+      </li>
+      <li>
+        <span class="thesis-grid__number">V</span>
+        <p>
+          “Entre vós não deve ser assim” é uma crítica permanente à dominação
+          espiritual.
+        </p>
+      </li>
+      <li>
+        <span class="thesis-grid__number">VI</span>
+        <p>
+          A minoridade franciscana é uma recusa espiritual da centralidade e da
+          dominação.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <Ornament variant="fleuron" />
+
+  <section aria-label="Próximos ensaios">
+    <header class="section-heading">
+      <div class="section-heading__rule"><span>Caderno de perguntas</span></div>
+      <h2>Ensaios em preparação</h2>
+      <p>
+        Títulos provisórios para uma investigação que deve crescer como arquivo.
+      </p>
+    </header>
+
+    <ol class="future-list">
+      <li>
+        <span class="future-list__title">
+          A concupiscência do poder recebe menos vigilância espiritual do que a
+          concupiscência sexual
+        </span>
+      </li>
+      <li>
+        <span class="future-list__title">Autoridade cristã e posse da consciência</span>
+      </li>
+      <li>
+        <span class="future-list__title">O abuso espiritual como falsa piedade</span>
+      </li>
+      <li>
+        <span class="future-list__title">
+          <span class="nowrap">A <em>libido dominandi</em></span> e a
+          espiritualização do controle
+        </span>
+      </li>
+      <li>
+        <span class="future-list__title">São Francisco e a recusa do centro</span>
+      </li>
+      <li>
+        <span class="future-list__title">
+          Como exercer autoridade cristã sem absorver a consciência do outro?
+        </span>
+      </li>
+    </ol>
+  </section>
+
+  <Ornament />
+
+  <section aria-label="Direção intelectual">
+    <header class="section-heading">
+      <div class="section-heading__rule"><span>Direção intelectual</span></div>
+      <h2>O que se investiga aqui</h2>
+      <p>
+        Como o pecado original, a concupiscência, o orgulho e a <em>libido dominandi</em>
+        atravessam autoridade, instituições eclesiais, espiritualidade e vida comum.
+      </p>
+    </header>
+
+    <ul class="topics-grid" aria-label="Temas centrais">
+      <li>
+        <span class="topics-grid__name">Autoridade na Igreja</span>
+        <span class="topics-grid__count">Em ensaio</span>
+        <p class="topics-grid__hint">
+          O problema não é a existência da hierarquia, mas sua tendência à
+          apropriação do outro.
+        </p>
+      </li>
+      <li>
+        <span class="topics-grid__name">Consciência e foro interno</span>
+        <span class="topics-grid__count">Em ensaio</span>
+        <p class="topics-grid__hint">
+          Existe diferença entre direção espiritual e substituição da consciência.
+        </p>
+      </li>
+      <li>
+        <span class="topics-grid__name">Libido dominandi</span>
+        <span class="topics-grid__count">Em ensaio</span>
+        <p class="topics-grid__hint">
+          O orgulho não deseja apenas prazer; deseja centralidade.
+        </p>
+      </li>
+    </ul>
   </section>
 </BaseLayout>

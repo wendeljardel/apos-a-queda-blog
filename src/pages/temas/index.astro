@@ -1,37 +1,108 @@
 ---
 import { getCollection } from "astro:content";
+import Ornament from "@components/Ornament.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 const essays = await getCollection("essays", ({ data }) => !data.draft);
-const categories = [...new Set(essays.flatMap((essay) => essay.data.categories))]
-  .sort((a, b) => a.localeCompare(b, "pt-BR"));
+
+const topics = [
+  {
+    name: "Pecado Original",
+    hint:
+      "O pecado original afeta não apenas desejos individuais, mas também relações e estruturas humanas.",
+  },
+  {
+    name: "Autoridade",
+    hint:
+      "A Queda não elimina a autoridade; ela desordena seu exercício.",
+  },
+  {
+    name: "Abuso Espiritual",
+    hint:
+      "O abuso espiritual raramente começa como malícia explícita; muitas vezes nasce de paternalismo e excesso de tutela.",
+  },
+  {
+    name: "Consciência",
+    hint:
+      "A autoridade cristã deve formar consciências, não absorvê-las.",
+  },
+  {
+    name: "São Francisco",
+    hint:
+      "A minoridade franciscana é uma recusa espiritual da centralidade e da dominação.",
+  },
+  {
+    name: "Poder",
+    hint:
+      "A concupiscência do poder recebe menos vigilância espiritual do que a concupiscência sexual.",
+  },
+  {
+    name: "Igreja",
+    hint:
+      "Mesmo instituições santas permanecem habitadas por seres humanos caídos.",
+  },
+  {
+    name: "Relações Humanas",
+    hint:
+      "Após a Queda, relações humanas tendem à posse, ao controle e à instrumentalização.",
+  },
+  {
+    name: "Minoridade",
+    hint:
+      "Frades menores é uma resposta espiritual à <em>libido dominandi</em>.",
+  },
+  {
+    name: "Notas de Leitura",
+    hint:
+      "Conceitos, citações e hipóteses ainda em forma de caderno.",
+  },
+];
+
+const allCategories = [
+  ...new Set([
+    ...topics.map((topic) => topic.name),
+    ...essays.flatMap((essay) => essay.data.categories),
+  ]),
+].sort((a, b) => a.localeCompare(b, "pt-BR"));
+
+const hintFor = (category: string) =>
+  topics.find((topic) => topic.name === category)?.hint ??
+  "Tema em desenvolvimento no arquivo.";
+
+const countFor = (category: string) =>
+  essays.filter((essay) => essay.data.categories.includes(category)).length;
 ---
 
 <BaseLayout
   title="Temas"
   description="Categorias iniciais de investigação do projeto Após a Queda."
 >
-  <section class="page-intro">
-    <p class="eyebrow">Mapa de leitura</p>
-    <h1>Temas</h1>
-    <p>
-      Os textos se organizam ao redor de pecado original, autoridade, consciência,
-      abuso espiritual, poder e relações humanas.
+  <header class="page-intro">
+    <p class="essay__kicker">Mapa de leitura</p>
+    <h1 class="page-intro__title">Temas</h1>
+    <p class="page-intro__sub">
+      Os ensaios se organizam ao redor de hipóteses sobre pecado original,
+      autoridade, consciência, abuso espiritual, poder e relações humanas após a
+      Queda.
     </p>
-  </section>
+  </header>
 
-  <ul class="topic-grid">
+  <Ornament />
+
+  <ul class="topics-grid" aria-label="Lista de temas">
     {
-      categories.map((category) => (
-        <li>
-          <span>{category}</span>
-          <small>
-            {essays.filter((essay) => essay.data.categories.includes(category)).length}
-            {" "}
-            texto(s)
-          </small>
-        </li>
-      ))
+      allCategories.map((category) => {
+        const count = countFor(category);
+        return (
+          <li>
+            <span class="topics-grid__name">{category}</span>
+            <span class="topics-grid__count">
+              {count === 0 ? "Em ensaio" : `${count} texto${count === 1 ? "" : "s"}`}
+            </span>
+            <p class="topics-grid__hint" set:html={hintFor(category)} />
+          </li>
+        );
+      })
     }
   </ul>
 </BaseLayout>

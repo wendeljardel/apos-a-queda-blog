@@ -1,18 +1,25 @@
 ---
 import SiteHeader from "@components/SiteHeader.astro";
+import SiteFooter from "@components/SiteFooter.astro";
 import "@styles/global.css";
 
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
+  contained?: boolean;
 }
 
 const {
   title = "Após a Queda",
-  description = "Ensaios teológicos, antropológicos e filosóficos sobre autoridade, consciência e relações humanas após a Queda.",
+  description = "Ensaios sobre autoridade, consciência e relações humanas após a Queda.",
+  ogImage = "/images/og-card.jpg",
+  contained = true,
 } = Astro.props;
 
-const pageTitle = title === "Após a Queda" ? title : `${title} | Após a Queda`;
+const pageTitle = title === "Após a Queda" ? title : `${title} · Após a Queda`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://aposaqueda.com.br");
+const ogImageUrl = new URL(ogImage, Astro.site ?? "https://aposaqueda.com.br").toString();
 ---
 
 <!doctype html>
@@ -22,22 +29,41 @@ const pageTitle = title === "Após a Queda" ? title : `${title} | Após a Queda`
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#f3ede0" />
+    <link rel="canonical" href={canonical.toString()} />
+
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content={canonical.toString()} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="Após a Queda" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="alternate" type="application/rss+xml" title="Após a Queda" href="/rss.xml" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
     <title>{pageTitle}</title>
   </head>
   <body>
     <SiteHeader />
     <main class="site-main">
-      <slot />
+      {
+        contained ? (
+          <div class="container">
+            <slot />
+          </div>
+        ) : (
+          <slot />
+        )
+      }
     </main>
-    <footer class="site-footer">
-      <p>Após a Queda é um arquivo de ensaios em construção.</p>
-    </footer>
+    <SiteFooter />
   </body>
 </html>

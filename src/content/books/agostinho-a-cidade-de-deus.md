@@ -1,11 +1,12 @@
 ---
 title: "A Cidade de Deus"
 author: "Santo Agostinho"
-description: "Referência fundamental para pensar amor, ordem, poder e libido dominandi."
+description: "Referência fundamental para pensar amor ordenado, poder e a libido dominandi como deformação do desejo após a Queda."
 categories:
   - Pecado Original
   - Poder
   - Libido Dominandi
+  - Padres da Igreja
 ---
 
-Obra central para a compreensão cristã da história e das formas desordenadas de amor que atravessam pessoas, comunidades e instituições.
+Tratado central da antropologia agostiniana. Distingue duas cidades pelos dois amores que as fundam — o amor de Deus até o desprezo de si, e o amor de si até o desprezo de Deus — e descreve a história humana como o entrelaçamento dessas cidades. Obra de referência permanente para todo o projeto.

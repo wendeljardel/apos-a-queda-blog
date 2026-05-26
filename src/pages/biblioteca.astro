@@ -1,29 +1,208 @@
 ---
 import { getCollection } from "astro:content";
+import Ornament from "@components/Ornament.astro";
+import CrossMark from "@components/CrossMark.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 const books = await getCollection("books");
+books.sort((a, b) => a.data.author.localeCompare(b.data.author, "pt-BR"));
+
+const fathersAndDoctors = [
+  { name: "Santo Agostinho", note: "Antropologia da Queda, libido dominandi" },
+  { name: "São Tomás de Aquino", note: "Inteligência da fé, lei natural" },
+  { name: "São Bernardo de Claraval", note: "Amor de Deus, exame de si" },
+  { name: "São Francisco de Assis", note: "Minoridade, desapego, fraternidade" },
+];
+
+const traditionAndModern = [
+  { name: "John Henry Newman", note: "Consciência, desenvolvimento do dogma" },
+  { name: "Romano Guardini", note: "Liturgia, contemplação, modernidade" },
+  { name: "Henri de Lubac", note: "Eclesiologia espiritual, sobrenatural" },
+  { name: "Joseph Ratzinger / Bento XVI", note: "Fé e razão, Tradição viva" },
+];
+
+const interlocutors = [
+  { name: "Hannah Arendt", note: "Banalidade do mal, vita activa" },
+  { name: "Michel Foucault", note: "Microfísica do poder, pastoral" },
+  { name: "Reinhold Niebuhr", note: "Ironia da história, realismo cristão" },
+];
+
+const magisterium = [
+  {
+    title: "Lumen gentium",
+    source: "Concílio Vaticano II, 1964",
+    note: "Constituição dogmática sobre a Igreja — eclesiologia de comunhão e santidade peregrina.",
+  },
+  {
+    title: "Gaudium et spes",
+    source: "Concílio Vaticano II, 1965",
+    note: "A Igreja no mundo contemporâneo — dignidade da pessoa e da consciência (§ 16).",
+  },
+  {
+    title: "Dei Verbum",
+    source: "Concílio Vaticano II, 1965",
+    note: "Sobre a Revelação divina, Escritura e Tradição.",
+  },
+  {
+    title: "Veritatis splendor",
+    source: "São João Paulo II, 1993",
+    note: "Verdade moral, consciência, lei natural e fundamentos da teologia moral.",
+  },
+  {
+    title: "Catecismo da Igreja Católica",
+    source: "1992 / 1997",
+    note: "Síntese normativa da fé, da liturgia, da vida em Cristo e da oração.",
+  },
+];
 ---
 
 <BaseLayout
   title="Biblioteca"
-  description="Referências intelectuais e leituras centrais do projeto Após a Queda."
+  description="Referências da Tradição católica, do Magistério e interlocutores que sustentam o projeto Após a Queda."
 >
-  <section class="page-intro">
-    <p class="eyebrow">Referências</p>
-    <h1>Biblioteca</h1>
-    <p>Autores, livros e conceitos que sustentam a investigação do projeto.</p>
+  <header class="page-intro">
+    <p class="essay__kicker">
+      <CrossMark size={10} />
+      <span style="margin-left:0.4rem">Referências</span>
+    </p>
+    <h1 class="page-intro__title">Biblioteca</h1>
+    <p class="page-intro__sub">
+      Autores, obras e documentos eclesiais que sustentam a investigação deste arquivo.
+    </p>
+  </header>
+
+  <Ornament variant="cross" />
+
+  <section>
+    <header class="section-heading">
+      <div class="section-heading__rule"><span>Obras comentadas</span></div>
+      <h2>Leituras de base</h2>
+    </header>
+
+    {
+      books.length === 0 ? (
+        <p class="page-intro__sub" style="text-align:center">
+          Nenhuma obra comentada ainda.
+        </p>
+      ) : (
+        <ol class="references">
+          {books.map((book) => (
+            <li>
+              <div>
+                <p class="references__author">{book.data.author}</p>
+                {book.data.categories.length > 0 && (
+                  <ul
+                    class="tag-list"
+                    style="justify-content:flex-start;margin-top:0.5rem"
+                  >
+                    {book.data.categories.map((category) => (
+                      <li>{category}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+              <div>
+                <h3 class="references__title">{book.data.title}</h3>
+                <p class="references__body">{book.data.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      )
+    }
   </section>
 
-  <ol class="reference-list">
-    {
-      books.map((book) => (
-        <li>
-          <h2>{book.data.title}</h2>
-          <p class="reference-author">{book.data.author}</p>
-          <p>{book.data.description}</p>
-        </li>
-      ))
-    }
-  </ol>
+  <Ornament variant="fleuron" />
+
+  <section>
+    <header class="section-heading">
+      <div class="section-heading__rule"><span>Tradição</span></div>
+      <h2>Padres e Doutores</h2>
+      <p>A raiz da inteligência da fé — antropologia, ascese, eclesiologia.</p>
+    </header>
+
+    <ul class="topics-grid" aria-label="Padres e Doutores da Igreja">
+      {
+        fathersAndDoctors.map((entry) => (
+          <li>
+            <span class="topics-grid__name">{entry.name}</span>
+            <p class="topics-grid__hint">{entry.note}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <Ornament />
+
+  <section>
+    <header class="section-heading">
+      <div class="section-heading__rule"><span>Magistério vivo</span></div>
+      <h2>Mestres modernos da Tradição</h2>
+      <p>Vozes que traduziram a Tradição para a hora presente.</p>
+    </header>
+
+    <ul class="topics-grid" aria-label="Mestres modernos">
+      {
+        traditionAndModern.map((entry) => (
+          <li>
+            <span class="topics-grid__name">{entry.name}</span>
+            <p class="topics-grid__hint">{entry.note}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <Ornament />
+
+  <section>
+    <header class="section-heading">
+      <div class="section-heading__rule"><span>Documentos eclesiais</span></div>
+      <h2>Magistério de referência</h2>
+      <p>Textos conciliares e papais que balizam a leitura.</p>
+    </header>
+
+    <ol class="references">
+      {
+        magisterium.map((doc) => (
+          <li>
+            <div>
+              <p class="references__author">{doc.source}</p>
+            </div>
+            <div>
+              <h3 class="references__title">
+                <em>{doc.title}</em>
+              </h3>
+              <p class="references__body">{doc.note}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <Ornament />
+
+  <section>
+    <header class="section-heading">
+      <div class="section-heading__rule"><span>Diálogo</span></div>
+      <h2>Interlocutores</h2>
+      <p>
+        Pensadores não católicos relidos a partir do horizonte da fé — em diálogo
+        e em tensão fecunda.
+      </p>
+    </header>
+
+    <ul class="topics-grid" aria-label="Interlocutores">
+      {
+        interlocutors.map((entry) => (
+          <li>
+            <span class="topics-grid__name">{entry.name}</span>
+            <p class="topics-grid__hint">{entry.note}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </BaseLayout>

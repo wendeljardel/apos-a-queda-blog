@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Ornament from "@components/Ornament.astro";
 
 interface Props {
   title: string;
@@ -7,9 +8,22 @@ interface Props {
   pubDate: Date;
   categories: string[];
   readingTime: string;
+  heroImage?: string;
+  heroImageAlt?: string;
+  heroImageCredit?: string;
 }
 
-const { title, description, pubDate, categories, readingTime } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  categories,
+  readingTime,
+  heroImage,
+  heroImageAlt,
+  heroImageCredit,
+} = Astro.props;
+
 const formattedDate = new Intl.DateTimeFormat("pt-BR", {
   day: "2-digit",
   month: "long",
@@ -17,23 +31,44 @@ const formattedDate = new Intl.DateTimeFormat("pt-BR", {
 }).format(pubDate);
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} ogImage={heroImage}>
   <article class="essay">
-    <header class="essay-header">
-      <p class="eyebrow">Ensaio</p>
-      <h1>{title}</h1>
-      <p class="lede">{description}</p>
-      <div class="essay-meta">
+    <header class="essay__header">
+      <p class="essay__kicker">Ensaio</p>
+      <h1 class="essay__title">{title}</h1>
+      <p class="essay__lede">{description}</p>
+      <div class="essay__meta">
         <time datetime={pubDate.toISOString()}>{formattedDate}</time>
-        <span>{readingTime}</span>
+        <span>{readingTime} de leitura</span>
       </div>
-      <ul class="tag-list" aria-label="Categorias">
-        {categories.map((category) => <li>{category}</li>)}
-      </ul>
+      {
+        categories.length > 0 && (
+          <ul class="tag-list" aria-label="Categorias">
+            {categories.map((category) => <li>{category}</li>)}
+          </ul>
+        )
+      }
     </header>
+
+    {
+      heroImage && (
+        <figure class="essay__hero">
+          <img src={heroImage} alt={heroImageAlt ?? title} loading="eager" />
+          {heroImageCredit && <figcaption>{heroImageCredit}</figcaption>}
+        </figure>
+      )
+    }
+
+    <Ornament variant="compact" />
 
     <div class="prose">
       <slot />
     </div>
+
+    <Ornament variant="cross" />
+
+    <footer class="essay__footer">
+      <p><em>Após a Queda · caderno católico de ensaios em construção</em></p>
+    </footer>
   </article>
 </BaseLayout>

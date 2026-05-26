@@ -1,0 +1,44 @@
+---
+import CrossMark from "@components/CrossMark.astro";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container--wide site-footer__inner">
+    <div>
+      <p class="site-footer__brand">Após a Queda</p>
+      <p class="site-footer__motto">
+        Ensaios sobre autoridade, consciência e relações humanas após a Queda:
+        quando o serviço se desvia para a dominação e o cuidado se converte em
+        posse da alma.
+      </p>
+    </div>
+
+    <div>
+      <h3>Arquivo</h3>
+      <ul>
+        <li><a href="/ensaios/">Ensaios</a></li>
+        <li><a href="/temas/">Temas</a></li>
+        <li><a href="/biblioteca/">Biblioteca</a></li>
+        <li><a href="/sobre/">Sobre</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Acompanhar</h3>
+      <ul>
+        <li><a href="/rss.xml">RSS</a></li>
+        <li><a href="/sitemap-index.xml">Sitemap</a></li>
+      </ul>
+    </div>
+
+    <div class="site-footer__rule">
+      <span>© {year} · Após a Queda</span>
+      <span class="site-footer__motto-amdg">
+        <CrossMark size={12} />
+        <em>Ad maiorem Dei gloriam</em>
+      </span>
+    </div>
+  </div>
+</footer>

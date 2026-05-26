@@ -1,4 +1,6 @@
 ---
+import CrossMark from "@components/CrossMark.astro";
+
 const navItems = [
   { href: "/", label: "Início" },
   { href: "/ensaios/", label: "Ensaios" },
@@ -6,11 +8,59 @@ const navItems = [
   { href: "/biblioteca/", label: "Biblioteca" },
   { href: "/sobre/", label: "Sobre" },
 ];
+
+const currentPath = Astro.url.pathname;
+const isCurrent = (href: string) => {
+  if (href === "/") return currentPath === "/";
+  return currentPath.startsWith(href);
+};
+
+const toRoman = (num: number): string => {
+  const map: [number, string][] = [
+    [1000, "M"], [900, "CM"], [500, "D"], [400, "CD"],
+    [100, "C"], [90, "XC"], [50, "L"], [40, "XL"],
+    [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"],
+  ];
+  let n = num;
+  let result = "";
+  for (const [value, symbol] of map) {
+    while (n >= value) {
+      result += symbol;
+      n -= value;
+    }
+  }
+  return result;
+};
+
+const now = new Date();
+const yearRoman = toRoman(now.getFullYear());
+const ptDate = new Intl.DateTimeFormat("pt-BR", {
+  day: "2-digit",
+  month: "long",
+}).format(now);
 ---
 
 <header class="site-header">
-  <a class="site-title" href="/">Após a Queda</a>
-  <nav aria-label="Navegação principal">
-    {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
-  </nav>
+  <div class="container--wide site-header__inner">
+    <p class="site-header__meta" aria-label="Edição corrente">
+      <span class="site-header__meta-line">Anno Domini {yearRoman}</span>
+      <span class="site-header__meta-sub">{ptDate}</span>
+    </p>
+
+    <a class="site-header__brand" href="/" aria-label="Após a Queda — página inicial">
+      <CrossMark size={14} class="site-header__brand-mark-cross" />
+      <span class="site-header__brand-mark">Após a Queda</span>
+      <span class="site-header__brand-sub">Autoridade, consciência e Queda</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Navegação principal">
+      {
+        navItems.map((item) => (
+          <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
 </header>

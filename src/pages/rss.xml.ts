@@ -9,13 +9,13 @@ export const GET: APIRoute = async (context) => {
   return rss({
     title: "Após a Queda",
     description:
-      "Ensaios teológicos, antropológicos e filosóficos sobre autoridade, consciência e relações humanas após a Queda.",
-    site: context.site,
+      "Ensaios sobre autoridade, consciência e relações humanas após a Queda.",
+    site: context.site ?? "https://aposaqueda.com.br",
     items: essays.map((essay) => ({
       title: essay.data.title,
       description: essay.data.description,
       pubDate: essay.data.pubDate,
-      link: `/ensaios/${essay.slug}/`,
+      link: `/ensaios/${essay.id}/`,
       categories: essay.data.categories,
     })),
   });

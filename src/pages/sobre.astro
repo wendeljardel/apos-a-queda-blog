@@ -1,27 +1,187 @@
 ---
+import Ornament from "@components/Ornament.astro";
+import CrossMark from "@components/CrossMark.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
   title="Sobre"
-  description="Motivação e natureza ensaística do projeto Após a Queda."
+  description="Motivação católica e natureza ensaística do projeto Após a Queda."
 >
-  <article class="page-intro">
-    <p class="eyebrow">Motivação</p>
-    <h1>Sobre</h1>
-    <p>
-      Após a Queda é um arquivo de pensamento em construção. O projeto reúne
-      ensaios sobre pecado original, autoridade, abuso espiritual, consciência e
-      relações humanas na perspectiva cristã.
+  <header class="page-intro">
+    <p class="essay__kicker">
+      <CrossMark size={10} />
+      <span style="margin-left:0.4rem">Motivação</span>
     </p>
-    <p>
-      A proposta não é produzir conteúdo rápido, polêmico ou panfletário, mas
-      cultivar uma leitura lenta sobre as formas pelas quais a vontade de domínio
-      atravessa pessoas, comunidades e instituições.
+    <h1 class="page-intro__title">Sobre o projeto</h1>
+    <p class="page-intro__sub">
+      Um caderno católico de ensaios sobre autoridade, consciência, poder e
+      dominação nas relações humanas após a Queda.
     </p>
-    <p>
-      Os textos são notas de investigação: provisórias, cuidadosas e abertas a
-      aprofundamento.
-    </p>
-  </article>
+  </header>
+
+  <Ornament variant="cross" />
+
+  <div class="about-grid">
+    <article class="prose about-grid__text">
+      <p>
+        Após a Queda é um arquivo de pensamento católico em construção. O
+        projeto reúne ensaios teológicos, antropológicos e filosóficos sobre
+        pecado original, autoridade, abuso espiritual, consciência e relações
+        humanas — lidos à luz das Escrituras, dos Padres da Igreja e da Tradição
+        viva do Magistério.
+      </p>
+
+      <p>
+        A hipótese central é simples: o pecado original não destrói a necessidade
+        da autoridade, mas corrompe continuamente sua finalidade, desviando-a do
+        serviço para a dominação. A Queda não elimina a autoridade; ela desordena
+        seu exercício.
+      </p>
+
+      <h2>Tom e método</h2>
+
+      <p>
+        A proposta não é produzir conteúdo rápido, polêmico ou panfletário. Não
+        se trata de denunciar precipitadamente nem de cultivar um
+        anti-institucionalismo simplista. Tampouco se trata de defender as
+        instituições eclesiais quando a verdade pede outra coisa. Trata-se de
+        pensar com lentidão sobre as formas pelas quais a vontade de dominar
+        atravessa pessoas, comunidades e instituições — inclusive aquelas que
+        existem para servir.
+      </p>
+
+      <p>
+        Os textos publicados aqui são notas de investigação: provisórias,
+        cuidadosas e abertas a aprofundamento. O ensaio é a forma adequada para
+        esse tipo de pergunta — permite hesitação, retomada, contradição e
+        releitura. Espera-se de quem lê a mesma disposição.
+      </p>
+
+      <h2>Hipóteses de trabalho</h2>
+
+      <p>
+        O projeto parte de algumas formulações provisórias: o pecado original
+        afeta não apenas desejos individuais, mas também relações e estruturas
+        humanas; a autoridade legítima corre constantemente o risco de tornar-se
+        autolegitimação; e a vontade de dominar pode contaminar até mesmo o
+        desejo sincero de fazer o bem.
+      </p>
+
+      <p>
+        Por isso, a pergunta recorrente não é apenas moral, mas antropológica:
+        como seres humanos caídos transformam relação em posse, cuidado em tutela
+        e serviço em centralidade? E como a fé católica pode purificar a
+        autoridade sem destruí-la?
+      </p>
+
+      <h2>Tradição de leitura</h2>
+
+      <p>
+        O projeto se inscreve numa linhagem reconhecível: Agostinho e a
+        antropologia da Queda; Tomás de Aquino e a inteligência da fé;
+        Bernardo, Francisco e a espiritualidade da minoridade; Newman e a
+        consciência; Guardini, de Lubac, Ratzinger e o que se costuma chamar de
+        <em>nouvelle théologie</em> em sua versão equilibrada; o Concílio
+        Vaticano II em sua hermenêutica de continuidade.
+      </p>
+
+      <p>
+        Em diálogo, e em alguns pontos em tensão fecunda, comparecem
+        interlocutores não católicos como Niebuhr (a ironia da história),
+        Arendt (a banalidade do mal) e Foucault (as microfísicas do poder) —
+        sempre relidos a partir do horizonte da fé.
+      </p>
+
+      <h2>O que se investiga</h2>
+
+      <p>
+        O fio condutor é uma pergunta antiga e incômoda: <em>como exercer
+        autoridade cristã sem absorver a consciência do outro?</em> A autoridade
+        cristã deve formar consciências, não substituí-las; deve conduzir a Deus,
+        não tornar-se centro de gravidade da vida espiritual alheia.
+      </p>
+
+      <p>
+        A investigação se distribui em alguns eixos: pecado original e
+        antropologia cristã; autoridade, consciência e foro interno;
+        clericalismo e abuso espiritual; minoridade, serviço e desapego;
+        estruturas de pecado, comunhão eclesial e vida comum.
+      </p>
+    </article>
+
+    <aside class="about-grid__aside">
+      <figure class="about-figure">
+        <img
+          src="/images/sobre-janela.jpg"
+          alt="Gravura sépia: janela ogival com vitrais e um manuscrito iluminado sobre lectern de madeira"
+          loading="lazy"
+        />
+        <figcaption>Lectio · manuscrito sob luz vespertina</figcaption>
+      </figure>
+
+      <blockquote class="about-grid__pull">
+        <p>
+          “A <em>libido dominandi</em> frequentemente se disfarça de zelo,
+          proteção e responsabilidade.”
+        </p>
+        <cite>— Hipótese de trabalho</cite>
+      </blockquote>
+
+      <blockquote class="about-grid__pull">
+        <p>
+          “Existe uma passagem quase imperceptível entre orientação legítima e
+          colonização da consciência.”
+        </p>
+        <cite>— Hipótese de trabalho</cite>
+      </blockquote>
+    </aside>
+  </div>
 </BaseLayout>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .about-grid__aside {
+    position: sticky;
+    top: 2rem;
+    display: grid;
+    gap: 1.6rem;
+  }
+
+  .about-grid__pull {
+    border-left: 2px solid var(--color-rule);
+    padding-left: 1.2rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--color-ink-soft);
+    font-size: 1.02rem;
+    line-height: 1.55;
+  }
+
+  .about-grid__pull cite {
+    display: block;
+    margin-top: 0.7rem;
+    font-style: normal;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--color-sepia);
+  }
+
+  @media (max-width: 820px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .about-grid__aside {
+      position: static;
+    }
+  }
+</style>

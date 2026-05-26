@@ -1,7 +1,9 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const essayCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/essays" }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -10,11 +12,14 @@ const essayCollection = defineCollection({
     categories: z.array(z.string()).default([]),
     readingTime: z.string(),
     draft: z.boolean().default(false),
+    heroImage: z.string().optional(),
+    heroImageAlt: z.string().optional(),
+    heroImageCredit: z.string().optional(),
   }),
 });
 
 const bookCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/books" }),
   schema: z.object({
     title: z.string(),
     author: z.string(),
@@ -24,7 +29,7 @@ const bookCollection = defineCollection({
 });
 
 const noteCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/notes" }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
