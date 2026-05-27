@@ -13,7 +13,7 @@ heroImage: "/images/ensaio-queda.png"
 heroImageAlt: "Gravura sépia: gesto de lava-pés em capítulo de pedra, com cadeira episcopal vazia ao fundo"
 ---
 
-Vivemos uma época em que abusos de autoridade são constantemente denunciados. Seja na política, nas empresas, nas famílias, nas escolas ou dentro da própria Igreja, surgem relatos de relações marcadas por manipulação, controle, humilhação e dominação.
+Vivemos uma época em que abusos de autoridade são constantemente denunciados. Seja na política, nas empresas, nas famílias, no militarismo, nas escolas ou dentro da própria Igreja surgem relatos de relações marcadas por manipulação, controle, humilhação e dominação.
 
 Essas situações assumem formas muito diferentes entre si: podem se manifestar como assédio moral, sobrecarga intencional de trabalho, ameaças veladas, culminando em violência explícita. Outras acontecem de forma sutil, muitas vezes imperceptível. O abuso pode surgir sob o véu do cuidado, do zelo, da proteção ou da obediência.
 
