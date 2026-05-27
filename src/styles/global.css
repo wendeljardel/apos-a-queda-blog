@@ -910,6 +910,16 @@ figcaption {
   color: var(--color-ink-soft);
 }
 
+.prose ul {
+  padding-left: 1.35rem;
+  margin-top: 0.6rem;
+  list-style-type: disc;
+}
+
+.prose ul li + li {
+  margin-top: 0.45rem;
+}
+
 .essay__footer {
   margin-top: 2.5rem;
   display: grid;

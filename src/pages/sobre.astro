@@ -11,7 +11,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
   <header class="page-intro">
     <p class="essay__kicker">
       <CrossMark size={10} />
-      <span style="margin-left:0.4rem">Motivação</span>
+      <span class="kicker-label">Motivação</span>
     </p>
     <h1 class="page-intro__title">Sobre o projeto</h1>
     <p class="page-intro__sub">
@@ -25,88 +25,126 @@ import BaseLayout from "@layouts/BaseLayout.astro";
   <div class="about-grid">
     <article class="prose about-grid__text">
       <p>
-        Após a Queda é um arquivo de pensamento católico em construção. O
-        projeto reúne ensaios teológicos, antropológicos e filosóficos sobre
+        <em>Após a Queda</em> é um arquivo de pensamento católico em construção. O
+        projeto reúne ensaios reflexivos, teológicos, antropológicos e filosóficos sobre
         pecado original, autoridade, abuso espiritual, consciência e relações
-        humanas — lidos à luz das Escrituras, dos Padres da Igreja e da Tradição
+        humanas à luz das Escrituras, dos Padres da Igreja e da Tradição
         viva do Magistério.
       </p>
 
-      <p>
-        A hipótese central é simples: o pecado original não destrói a necessidade
-        da autoridade, mas corrompe continuamente sua finalidade, desviando-a do
-        serviço para a dominação. O pecado original não elimina a autoridade; ela desordena
-        seu exercício.
-      </p>
+      <blockquote>
+        <p>
+          O pecado original não destrói a necessidade da autoridade, mas corrompe
+          continuamente sua finalidade, desviando-a do serviço para a dominação. A
+          Queda não elimina a autoridade; ela desordena seu exercício.
+        </p>
+      </blockquote>
 
-      <h2>Tom e método</h2>
-
-      <p>
-        A proposta não é produzir conteúdo rápido, polêmico ou panfletário. Não
-        se trata de denunciar precipitadamente nem de cultivar um
-        anti-institucionalismo simplista. Tampouco se trata de defender as
-        instituições eclesiais quando a verdade pede outra coisa. Trata-se de
-        pensar com lentidão sobre as formas pelas quais a vontade de dominar
-        atravessa pessoas, comunidades e instituições — inclusive aquelas que
-        existem para servir.
-      </p>
+      <h2>Método</h2>
 
       <p>
-        Os textos publicados aqui são notas de investigação: provisórias,
-        cuidadosas e abertas a aprofundamento. O ensaio é a forma adequada para
-        esse tipo de pergunta — permite hesitação, retomada, contradição e
-        releitura. Espera-se de quem lê a mesma disposição.
+        A proposta não é produzir conteúdo polêmico ou panfletário. Trata-se
+        de uma reflexão sobre as formas pelas quais a vontade de dominar atravessa
+        relações sociais, comunidades e instituições, inclusive aquelas que existem
+        para servir.
       </p>
 
-      <h2>Hipóteses de trabalho</h2>
+      <p>Não se trata de:</p>
+
+      <ul>
+        <li>fazer denúncias precipitadas;</li>
+        <li>cultivar anti-institucionalismo;</li>
+        <li>substituir investigação por reação ideológica.</li>
+      </ul>
 
       <p>
-        O projeto parte de algumas formulações provisórias: o pecado original
-        afeta não apenas desejos individuais, mas também relações e estruturas
-        humanas; a autoridade legítima corre constantemente o risco de tornar-se
-        autolegitimação; e a vontade de dominar pode contaminar até mesmo o
-        desejo sincero de fazer o bem.
+        Os textos publicados aqui são notas de investigação provisórias, cuidadosas e
+        abertas a aprofundamento. O ensaio é a forma adequada para esse tipo de
+        pergunta, pois permite hesitação, retomada e releitura. Espera-se do leitor a
+        mesma disposição.
       </p>
+
+      <h2>Hipóteses</h2>
 
       <p>
-        Por isso, a pergunta recorrente não é apenas moral, mas antropológica:
-        como seres humanos caídos transformam relação em posse, cuidado em tutela
-        e serviço em centralidade? E como a fé católica pode purificar a
-        autoridade sem destruí-la?
+        O projeto parte de formulações provisórias sobre como o pecado original afeta
+        relações e estruturas humanas, e como a vontade de dominar pode contaminar
+        até mesmo o desejo sincero de fazer o bem.
       </p>
 
-      <h2>Tradição de leitura</h2>
+      <p>Por isso, a pergunta recorrente não é apenas moral, mas antropológica:</p>
+
+      <ul>
+        <li>
+          como seres humanos transformam a relação em posse, o cuidado em tutela e o
+          serviço em centralidade;
+        </li>
+        <li>
+          como a fé católica pode purificar a autoridade sem destruí-la.
+        </li>
+      </ul>
+
+      <h2>Tradição</h2>
+
+      <p>O projeto dialoga, em primeiro lugar, com:</p>
+
+      <ul>
+        <li>Santo Agostinho e a antropologia da Queda;</li>
+        <li>Santo Tomás de Aquino e a inteligência da fé;</li>
+        <li>São Francisco e a espiritualidade da minoridade;</li>
+        <li>São John Henry Newman e a consciência;</li>
+        <li>
+          Guardini, de Lubac, Ratzinger e o que se costuma chamar de <em>nouvelle
+          théologie</em> em sua versão equilibrada;
+        </li>
+        <li>o Concílio Vaticano II em sua hermenêutica de continuidade.</li>
+      </ul>
 
       <p>
-        O projeto se inscreve numa linhagem reconhecível: Agostinho e a
-        antropologia da Queda; Tomás de Aquino e a inteligência da fé;
-        Bernardo, Francisco e a espiritualidade da minoridade; Newman e a
-        consciência; Guardini, de Lubac, Ratzinger e o que se costuma chamar de
-        <em>nouvelle théologie</em> em sua versão equilibrada; o Concílio
-        Vaticano II em sua hermenêutica de continuidade.
+        Em diálogo, e em alguns pontos em tensão fecunda, comparecem interlocutores
+        não católicos:
       </p>
 
-      <p>
-        Em diálogo, e em alguns pontos em tensão fecunda, comparecem
-        interlocutores não católicos como Niebuhr (a ironia da história),
-        Arendt (a banalidade do mal) e Foucault (as microfísicas do poder) —
-        sempre relidos a partir do horizonte da fé.
-      </p>
+      <ul>
+        <li>Niebuhr (a ironia da história);</li>
+        <li>Arendt (a banalidade do mal);</li>
+        <li>Foucault (as microfísicas do poder).</li>
+      </ul>
+
+      <p>sempre relidos a partir do horizonte da fé.</p>
 
       <h2>O que se investiga</h2>
 
-      <p>
-        O fio condutor é uma pergunta antiga e incômoda: <em>como exercer
-        autoridade cristã sem absorver a consciência do outro?</em> A autoridade
-        cristã deve formar consciências, não substituí-las; deve conduzir a Deus,
-        não tornar-se centro de gravidade da vida espiritual alheia.
-      </p>
+      <blockquote>
+        <p>
+          Como exercer autoridade sem absorver a consciência do outro?
+        </p>
+      </blockquote>
 
       <p>
-        A investigação se distribui em alguns eixos: pecado original e
-        antropologia cristã; autoridade, consciência e foro interno;
-        clericalismo e abuso espiritual; minoridade, serviço e desapego;
-        estruturas de pecado, comunhão eclesial e vida comum.
+        A verdadeira autoridade deve formar consciências, não substituí-las; deve
+        conduzir a Deus, não tornar-se um centro de gravidade da vida espiritual
+        alheia.
+      </p>
+
+      <p>A investigação se distribui em alguns eixos:</p>
+
+      <ul>
+        <li>pecado original e antropologia cristã;</li>
+        <li>autoridade, consciência e foro interno;</li>
+        <li>clericalismo e abuso espiritual;</li>
+        <li>minoridade, serviço e desapego;</li>
+        <li>estruturas de pecado, comunhão eclesial e vida comum.</li>
+      </ul>
+
+      <h2>Quem escreve</h2>
+
+      <p>
+        Este projeto é escrito por Wendel Vasconcelos, leigo católico, interessado
+        nas relações entre antropologia cristã, autoridade e relações sociais. Os
+        textos publicados aqui não pretendem falar em nome de nenhuma instituição,
+        mas registrar uma investigação pessoal, aberta e em amadurecimento à luz da
+        fé católica.
       </p>
     </article>
 
@@ -117,7 +155,6 @@ import BaseLayout from "@layouts/BaseLayout.astro";
           alt="Gravura sépia: janela ogival com vitrais e um manuscrito iluminado sobre lectern de madeira"
           loading="lazy"
         />
-        <figcaption>Lectio · manuscrito sob luz vespertina</figcaption>
       </figure>
 
       <blockquote class="about-grid__pull">
@@ -131,7 +168,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
       <blockquote class="about-grid__pull">
         <p>
           “Existe uma passagem quase imperceptível entre orientação legítima e
-          colonização da consciência.”
+          posse da consciência.”
         </p>
         <cite>— Hipótese de trabalho</cite>
       </blockquote>
@@ -140,6 +177,10 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style>
+  .kicker-label {
+    margin-left: 0.4rem;
+  }
+
   .about-grid {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
