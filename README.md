@@ -23,14 +23,17 @@ npm run dev
 npm run build
 ```
 
-## Cloudflare Pages
+## Cloudflare Workers (Static Assets)
 
-Configuração sugerida:
+Configuração sugerida no fluxo "Connect git repo or use template":
 
 - Build command: `npm run build`
-- Build output directory: `dist`
+- Deploy command: `npx wrangler deploy`
+- Root directory: vazio
 - Node.js version: atual LTS
 - Domínio customizado: `aposaqueda.com.br`
+
+O arquivo `wrangler.jsonc` na raiz aponta o diretório de assets para `./dist`.
 
 ## Conteúdo
 
