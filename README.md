@@ -28,7 +28,7 @@ npm run build
 Configuração sugerida no fluxo "Connect git repo or use template":
 
 - Build command: `npm run build`
-- Deploy command: `npx wrangler deploy`
+- Deploy command: `npx wrangler deploy --config wrangler.jsonc`
 - Root directory: vazio
 - Node.js version: atual LTS
 - Domínio customizado: `aposaqueda.com.br`
