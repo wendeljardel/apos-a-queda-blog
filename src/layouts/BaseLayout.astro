@@ -12,7 +12,7 @@ interface Props {
 
 const {
   title = "Após a Queda",
-  description = "Ensaios sobre autoridade, consciência e relações humanas após a Queda.",
+  description = "Ensaios sobre autoridade, consciência e relações humanas após o pecado original.",
   ogImage = "/images/og-card.jpg",
   contained = true,
 } = Astro.props;
@@ -47,7 +47,9 @@ const ogImageUrl = new URL(ogImage, Astro.site ?? "https://aposaqueda.com.br").t
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="alternate" type="application/rss+xml" title="Após a Queda" href="/rss.xml" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="icon" href="/favicon.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg" sizes="180x180" />
 
     <title>{pageTitle}</title>
   </head>

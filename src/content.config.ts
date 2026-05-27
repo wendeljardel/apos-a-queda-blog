@@ -14,7 +14,6 @@ const essayCollection = defineCollection({
     draft: z.boolean().default(false),
     heroImage: z.string().optional(),
     heroImageAlt: z.string().optional(),
-    heroImageCredit: z.string().optional(),
   }),
 });
 

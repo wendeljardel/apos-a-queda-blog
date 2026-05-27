@@ -814,21 +814,17 @@ figcaption {
 
 .essay__hero {
   margin-block: 1.2rem;
+  max-width: 34rem;
+  margin-inline: auto;
   border: 1px solid var(--color-rule);
   background: var(--color-paper-warm);
 }
 
 .essay__hero img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   filter: sepia(0.12) contrast(1.02);
-}
-
-.essay__hero figcaption {
-  padding: 0.7rem 1rem;
-  border-top: 1px solid var(--color-rule-soft);
-  background: var(--color-paper-warm);
 }
 
 .tag-list {
