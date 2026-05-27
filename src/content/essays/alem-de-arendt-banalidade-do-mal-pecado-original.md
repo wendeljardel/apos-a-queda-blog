@@ -9,6 +9,8 @@ categories:
   - Filosofia Política
 readingTime: "8 min"
 draft: false
+heroImage: "/images/arendt-banalidade-mal.png"
+heroImageAlt: "Gravura sépia: funcionário escrevendo em um salão burocrático escuro, com uma sombra ampliada ao fundo e luz entrando por uma porta"
 ---
 
 Hannah Arendt viu algo real. Ao acompanhar o julgamento de Adolf Eichmann em Jerusalém, ela percebeu que o mal moderno nem sempre se apresenta com rosto demoníaco, grandeza trágica ou consciência explícita de perversidade.
