@@ -1,6 +1,6 @@
 ---
-title: "Além de Arendt: a banalidade do mal é a manifestação sociopolítica observável do pecado original"
-description: "Um ensaio sobre Hannah Arendt, a banalidade do mal e a antropologia católica do pecado original."
+title: "Além da Banalidade do Mal: um aprofundamento ontológico a partir da antropologia católica"
+description: "A banalidade do mal é uma manifestação sociopolítica observável do pecado original."
 pubDate: 2026-05-27
 categories:
   - Pecado Original
@@ -13,39 +13,43 @@ heroImage: "/images/arendt-banalidade-mal.png"
 heroImageAlt: "Gravura sépia: funcionário escrevendo em um salão burocrático escuro, com uma sombra ampliada ao fundo e luz entrando por uma porta"
 ---
 
-Hannah Arendt viu algo real. Ao acompanhar o julgamento de Adolf Eichmann em Jerusalém, ela percebeu que o mal moderno nem sempre se apresenta com rosto demoníaco, grandeza trágica ou consciência explícita de perversidade.
+Ao acompanhar o julgamento de Adolf Eichmann em Jerusalém, Hanna Arendt percebeu que o mal nem sempre se apresenta sob o manto demoniaco ou vestido de uma grande perversidade. Às vezes, ele se apresenta como rotina, como burocracia, como obediência e como ausência de pensamento.
 
-Às vezes, ele se apresenta como rotina. Como linguagem administrativa. Como obediência funcional. Como ausência de pensamento.
+Essa observação permanece perturbadora porque nos põe diante da pergunta: 
 
-Essa intuição permanece perturbadora porque desloca a pergunta. O problema não é apenas saber como monstros cometem atrocidades. O problema é perguntar como pessoas comuns podem participar de males enormes sem se reconhecerem como autoras deles.
+>Como pessoas comuns podem participar de males enormes sem se reconhecerem como autoras deles?
 
-Este ensaio parte dessa intuição e tenta dar um passo a mais. Não contra Arendt, mas além dela.
-
-> A banalidade do mal é o fenômeno visível. O pecado original é a condição antropológica que torna esse fenômeno possível.
+Este ensaio parte dessa intuição e tenta dar um passo a mais. Não contra Arendt e sua tese, mas além dela.
 
 ## I. O que Arendt viu
 
-Arendt percebeu que Eichmann não parecia corresponder à imagem clássica do criminoso excepcional. Ele não se apresentava como uma figura satânica, movida por ódio grandioso ou por uma inteligência maligna fora do comum.
+Arendt percebeu que Eichmann não parecia se assimilar à imagem clássica do criminoso monstruoso que havia imaginado. O que aparecia era um homem burocrático preso a fórmulas prontas, incapaz de pensar seriamente sobre o sentido moral dos próprios atos. Sua culpa não estava na ignorância simples, mas na renúncia da consciência. Eichmann obedecia, repetia justificativas, falava a linguagem do dever e da eficiência.
 
-O que aparecia era algo mais desconcertante: um homem burocrático, medíocre, preso a fórmulas prontas, incapaz de pensar seriamente sobre o sentido moral dos próprios atos.
+No ensaio chamado Pensamento e Considerações Morais, Hanna Arendt desenvolve a tese que se originou no seu livro sobre o julgamento em Jerusalém. Ela descreve a banalidade do mal como o fenômeno dos atos maus cometidos em proporções gigantescas cuja raiz não se encontra em maldade especial, patologia ou convicção ideológica. Mas, numa "curiosa e bastante autêntica incapacidade de pensar"
 
-Sua culpa não estava na ignorância simples. Estava na renúncia da consciência. Eichmann obedecia, organizava, encaminhava, repetia justificativas, falava a linguagem do dever e da eficiência. Ele parecia menos possuído por uma paixão monstruosa do que esvaziado de julgamento.
+>Mas será se Aldof Eichmann realmente era incapaz de pensar e avaliar seus atos? Ou será que ele perfomou tudo isso para tentar minimizar sua pena?
 
-Foi isso que Arendt chamou de banalidade do mal. Não a ideia de que o mal seja pequeno, irrelevante ou desculpável, mas a constatação de que males imensos podem ser praticados por sujeitos interiormente rasos, incapazes de pensar a partir da responsabilidade pessoal.
+A historiadora alemã Bettina Stangneth publicou Eichmann Before Jerusalem, onde demonstrou a partir de entrevistas gravadas na Argentina nos anos 50s que Eichmann expressava com orgulho seu papel no holocausto e falava abertamente de suas convicções nazistas. Nessas gravações ele não apenas seguia ordens mas deliberava, ordenava e decidia. Nas suas falas ele manifestava de forma consciente a justificava do extermínio como um dever.
 
-Nesse ponto, Arendt tocou uma verdade observável. O mal pode assumir forma administrativa. Pode esconder-se atrás da função. Pode diluir a culpa em procedimentos. Pode transformar a consciência em engrenagem.
+Já no tribunal, Eichmann se apresentou como um mero "especialista em transporte" e cidadão cumpridor de ordens. Historiadores posteriores mostram que havia um antissemitismo e uma iniciativa muito mais aflorados do que Arendt percebeu.
 
-## II. Onde Arendt parou, e por quê
+Isso invalida Arendt? Não necessariamente. Talvez Eichmann fosse capaz de convicção ideológica e igualmente capaz de suspender o julgamento moral quando a estrutura ao redor o dispensava de pensar. A intenção de Arendt com  a banalidade do mal não era aplicar somente a Eichmann e nem elaborar uma descrição minuciosa da sua personalidade. Mas no fato pelo qual pessoas comuns, com ou sem convicção, tornam-se instrumentos do mal sem precisar se reconhecer como tais.
 
-Arendt parou na fenomenologia do mal político. E isso não deve ser tratado como falha moral ou superficialidade intelectual. Era o limite próprio do seu método.
 
-Sua análise era política, histórica e secular. Ela queria compreender como um regime totalitário podia produzir obediência, linguagem, burocracia e participação no mal. Seu interesse estava na aparência pública do fenômeno, na forma como o mal se torna praticável dentro de estruturas sociais e políticas.
+## II. Pensar não impede, orienta
 
-Por isso, Arendt não ofereceu uma explicação metafísica da inclinação humana ao mal. Ela não pretendia fazê-lo. Sua pergunta não era teológica. Sua linguagem não era a da natureza ferida, da concupiscência ou do pecado original.
+No seu ensaio Arendt demonstra como a ausência absoluta de pensamento mostrada por Eichmann levou-a a formular o problema acerca do mal, assim exposto: “Será que a natureza da atividade de pensar – o hábito de examinar, refletir sobre aquilo que vem a acontecer, independente de qualquer conteúdo específico e de resultados – poderia ser tal que “condiciona” os homens a não fazer o mal?”.
 
-O que ela viu foi o sintoma no campo da história. O que ela não buscou, ao menos não nesses termos, foi a raiz antropológica mais profunda desse sintoma.
+Em um artigo publicado em 1997 Richard J. Bernstein argumenta que Hannah Arendt não responde satisfatoriamente às questões que ela mesma levanta da conexão do pensamento e o problema do mal. Ele avalia que ela nos deixa com uma profunda e inquietante perplexidade. A questão que escapa a Arendt é como podemos explicar as diferenças entre aqueles que ainda são capazes de julgar o que é mal e agir de acordo com suas consciências, e aqueles que perderam ou nunca tiveram essa habilidade.
 
-É nesse ponto que a reflexão católica pode entrar, não para negar Arendt, mas para completar o alcance da pergunta.
+Eichmann pode ter pensado, poderia ter tido convicções ou uma lógica pessoal. O problema não era ausência de pensamento, reflexão, ,as uma ausência de orientação do ser. A reflexão sem uma base ontologica pode construir argumentos elegantes para o mal. A história está cheia de intelectuais que pensaram muito e chegaram a conclusões terríveis.
+
+Arendt parou na fenomenologia do mal político, social e isso não deve ser tratado como superficialidade intelectual. Existe um limite no seu próprio metódo. Sua análise era política, histórica e secular. Ela queria compreender como um regime totalitário podia produzir obediência, burocracia e participação no mal. Seu interesse estava na aparência pública do fenômeno, na forma como o mal se torna praticável dentro de estruturas sociais e políticas.
+
+Por isso, Arendt não ofereceu uma explicação metafísica para a inclinação humana ao mal. Sua pergunta não era teológica e sua linguagem não era a da natureza ferida, da concupiscência ou do pecado original.
+
+
+É nesse ponto que a reflexão católica pode entrar, não para negar Arendt, mas mas para descer uma camada abaixo da pergunta que ela deixou aberta.
 
 ## III. O que está abaixo do fenômeno
 

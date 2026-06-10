@@ -1,7 +1,7 @@
 ---
 title: "O pecado Original e a Autoridade"
 description: "Manifesto inaugural do projeto: uma conversa sobre autoridade, consciência e a passagem do serviço para a dominação."
-pubDate: 2026-05-27
+pubDate: 2026-05-26
 categories:
   - Pecado Original
   - Autoridade
