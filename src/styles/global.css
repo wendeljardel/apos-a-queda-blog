@@ -394,7 +394,6 @@ figcaption {
   height: auto;
   display: block;
   opacity: 0.85;
-  mix-blend-mode: multiply;
 }
 
 /* --------------------------------------------------------------------------
