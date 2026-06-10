@@ -8,7 +8,7 @@ categories:
   - Consciência
   - Filosofia Política
 readingTime: "8 min"
-draft: false
+draft: true
 heroImage: "/images/arendt-banalidade-mal.png"
 heroImageAlt: "Gravura sépia: funcionário escrevendo em um salão burocrático escuro, com uma sombra ampliada ao fundo e luz entrando por uma porta"
 ---
