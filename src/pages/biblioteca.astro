@@ -8,23 +8,22 @@ const books = await getCollection("books");
 books.sort((a, b) => a.data.author.localeCompare(b.data.author, "pt-BR"));
 
 const fathersAndDoctors = [
-  { name: "Santo Agostinho", note: "Antropologia da Queda, libido dominandi" },
-  { name: "São Tomás de Aquino", note: "Inteligência da fé, lei natural" },
-  { name: "São Bernardo de Claraval", note: "Amor de Deus, exame de si" },
-  { name: "São Francisco de Assis", note: "Minoridade, desapego, fraternidade" },
+  { name: "Santo Agostinho", note: "Antropologia do pecado original, libido dominandi" },
+  { name: "G. K. Chesterton", note: "Natureza humana, pecado original, realismo cristão" },
+  { name: "Joseph Ratzinger / Bento XVI", note: "Antropologia cristã, liberdade, graça" },
 ];
 
 const traditionAndModern = [
-  { name: "John Henry Newman", note: "Consciência, desenvolvimento do dogma" },
-  { name: "Romano Guardini", note: "Liturgia, contemplação, modernidade" },
-  { name: "Henri de Lubac", note: "Eclesiologia espiritual, sobrenatural" },
-  { name: "Joseph Ratzinger / Bento XVI", note: "Fé e razão, Tradição viva" },
+  { name: "São Tomás de Aquino", note: "Natureza humana, virtudes, vontade e lei natural" },
+  { name: "Romano Guardini", note: "Maturidade humana, consciência, responsabilidade" },
+  { name: "Henri de Lubac", note: "Natureza e graça, antropologia cristã" },
+  { name: "São John Henry Newman", note: "Consciência, assentimento e desenvolvimento doutrinal" },
 ];
 
 const interlocutors = [
-  { name: "Hannah Arendt", note: "Banalidade do mal, vita activa" },
-  { name: "Michel Foucault", note: "Microfísica do poder, pastoral" },
+  { name: "Hannah Arendt", note: "Banalidade do mal, consciência, julgamento" },
   { name: "Reinhold Niebuhr", note: "Ironia da história, realismo cristão" },
+  { name: "Michel Foucault", note: "Poder, disciplina e descrição de fenômenos institucionais" },
 ];
 
 const magisterium = [
@@ -58,7 +57,7 @@ const magisterium = [
 
 <BaseLayout
   title="Biblioteca"
-  description="Referências da Tradição católica, do Magistério e interlocutores que sustentam o projeto Após a Queda."
+  description="Referências da Tradição católica e interlocutores para pensar pecado original, antropologia cristã e condição humana."
 >
   <header class="page-intro">
     <p class="essay__kicker">
@@ -67,7 +66,8 @@ const magisterium = [
     </p>
     <h1 class="page-intro__title">Biblioteca</h1>
     <p class="page-intro__sub">
-      Autores, obras e documentos eclesiais que sustentam a investigação deste arquivo.
+      Autores, obras e documentos que sustentam a investigação sobre pecado
+      original, condição humana, consciência, liberdade e vida comum.
     </p>
   </header>
 
@@ -116,9 +116,9 @@ const magisterium = [
 
   <section>
     <header class="section-heading">
-      <div class="section-heading__rule"><span>Tradição</span></div>
-      <h2>Padres e Doutores</h2>
-      <p>A raiz da inteligência da fé — antropologia, ascese, eclesiologia.</p>
+      <div class="section-heading__rule"><span>Núcleo principal</span></div>
+      <h2>Referências de base</h2>
+      <p>A raiz da investigação — pecado original, liberdade, consciência e natureza humana.</p>
     </header>
 
     <ul class="topics-grid" aria-label="Padres e Doutores da Igreja">
@@ -137,9 +137,9 @@ const magisterium = [
 
   <section>
     <header class="section-heading">
-      <div class="section-heading__rule"><span>Magistério vivo</span></div>
-      <h2>Mestres modernos da Tradição</h2>
-      <p>Vozes que traduziram a Tradição para a hora presente.</p>
+      <div class="section-heading__rule"><span>Segundo círculo</span></div>
+      <h2>Mestres e interlocutores próximos</h2>
+      <p>Vozes que ajudam a pensar natureza, graça, consciência e responsabilidade.</p>
     </header>
 
     <ul class="topics-grid" aria-label="Mestres modernos">

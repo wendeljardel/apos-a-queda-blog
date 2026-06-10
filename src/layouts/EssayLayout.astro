@@ -5,6 +5,7 @@ import Ornament from "@components/Ornament.astro";
 interface Props {
   title: string;
   description: string;
+  sequence: number;
   pubDate: Date;
   categories: string[];
   readingTime: string;
@@ -15,6 +16,7 @@ interface Props {
 const {
   title,
   description,
+  sequence,
   pubDate,
   categories,
   readingTime,
@@ -27,12 +29,29 @@ const formattedDate = new Intl.DateTimeFormat("pt-BR", {
   month: "long",
   year: "numeric",
 }).format(pubDate);
+
+const toRoman = (num: number): string => {
+  const map: [number, string][] = [
+    [1000, "M"], [900, "CM"], [500, "D"], [400, "CD"],
+    [100, "C"], [90, "XC"], [50, "L"], [40, "XL"],
+    [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"],
+  ];
+  let n = num;
+  let result = "";
+  for (const [value, symbol] of map) {
+    while (n >= value) {
+      result += symbol;
+      n -= value;
+    }
+  }
+  return result;
+};
 ---
 
 <BaseLayout title={title} description={description} ogImage={heroImage}>
   <article class="essay">
     <header class="essay__header">
-      <p class="essay__kicker">Ensaio</p>
+      <p class="essay__kicker">Ensaio {toRoman(sequence)}</p>
       <h1 class="essay__title">{title}</h1>
       <p class="essay__lede">{description}</p>
       <div class="essay__meta">

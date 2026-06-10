@@ -5,15 +5,15 @@ import Ornament from "@components/Ornament.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 const essays = (await getCollection("essays", ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  .sort((a, b) => a.data.sequence - b.data.sequence);
 ---
 
 <BaseLayout
   title="Ensaios"
-  description="Lista cronológica dos ensaios publicados em Após a Queda."
+  description="Lista editorial dos ensaios publicados em Após a Queda."
 >
   <header class="page-intro">
-    <p class="essay__kicker">Arquivo cronológico</p>
+    <p class="essay__kicker">Arquivo editorial</p>
     <h1 class="page-intro__title">Ensaios</h1>
     <p class="page-intro__sub">
       Textos abertos e em desenvolvimento — para leitura, releitura e reflexão.

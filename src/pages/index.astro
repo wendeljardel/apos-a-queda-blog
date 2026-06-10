@@ -6,7 +6,7 @@ import CrossMark from "@components/CrossMark.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 const allEssays = (await getCollection("essays", ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  .sort((a, b) => a.data.sequence - b.data.sequence);
 
 const featured = allEssays[0];
 const archive = allEssays.slice(1);
@@ -18,6 +18,8 @@ const featuredDate = featured
       year: "numeric",
     }).format(featured.data.pubDate)
   : "";
+
+const year = new Date().getFullYear();
 
 const toRoman = (num: number): string => {
   const map: [number, string][] = [
@@ -35,15 +37,12 @@ const toRoman = (num: number): string => {
   }
   return result;
 };
-const year = toRoman(new Date().getFullYear());
 ---
 
 <BaseLayout>
   <section class="masthead" aria-label="Edição corrente">
     <p class="masthead__line">
-      Anno Domini {year}
-      <span class="masthead__sep">·</span>
-      Caderno I
+      Caderno de ensaios · {year}
       <span class="masthead__sep">·</span>
       Edição inaugural
     </p>
@@ -56,8 +55,8 @@ const year = toRoman(new Date().getFullYear());
 
   <section class="epigraph" aria-label="Epígrafe">
     <p class="epigraph__text">
-      O pecado original não destrói a necessidade da autoridade, mas corrompe
-      continuamente sua finalidade, desviando-a do serviço para a dominação.
+      O pecado original não é apenas uma teoria doutrinária, mas é uma condição presente
+      reconhecível nos desejos, nas escolhas e nas pequenas desordens da vida comum.
     </p>
     <p class="epigraph__cite">
       Hipótese central · <em>Após a Queda</em>
@@ -71,7 +70,7 @@ const year = toRoman(new Date().getFullYear());
       <section class="featured" aria-label="Ensaio em destaque">
         <p class="featured__kicker">
           <CrossMark size={10} />
-          <span>Em destaque</span>
+          <span>Ensaio {toRoman(featured.data.sequence)}</span>
         </p>
 
         <article class="featured__inner">
@@ -129,7 +128,7 @@ const year = toRoman(new Date().getFullYear());
             <p>Para leitura lenta, releitura e investigação continuada.</p>
           </header>
 
-          <EssayList essays={archive} startIndex={2} />
+          <EssayList essays={archive} />
         </section>
       </>
     )
@@ -142,8 +141,8 @@ const year = toRoman(new Date().getFullYear());
       <div class="section-heading__rule"><span>Hipóteses</span></div>
       <h2>Frases que orientam o arquivo</h2>
       <p>
-        Formulações provisórias para pensar autoridade, consciência e relações
-        humanas depois da Queda.
+        Formulações provisórias para pensar a condição humana ferida pelo pecado
+        original, antes de falar sobre política, estruturas sociais ou psicologia.
       </p>
     </header>
 
@@ -151,40 +150,36 @@ const year = toRoman(new Date().getFullYear());
       <li>
         <span class="thesis-grid__number">I</span>
         <p>
-          O pecado original não elimina a autoridade; ela desordena seu exercício.
+          Muitos problemas sociais possuem raízes antropológicas mais profundas
+          do que suas manifestações imediatas.
         </p>
       </li>
       <li>
         <span class="thesis-grid__number">II</span>
         <p>
-          A <em>libido dominandi</em> frequentemente se disfarça de zelo,
-          proteção e responsabilidade.
+          A inclinação ao mal aparece antes da intenção plenamente formada e
+          continua agindo mesmo depois da educação.
         </p>
       </li>
       <li>
         <span class="thesis-grid__number">III</span>
         <p>
-          A autoridade cristã deve formar consciências, não absorvê-las.
+          O pecado original não destrói a liberdade; ele a torna vulnerável à
+          fuga da verdade, da responsabilidade e do bem.
         </p>
       </li>
-      <li>
-        <span class="thesis-grid__number">IV</span>
-        <p>
-          O abuso espiritual frequentemente se apresenta como piedade.
-        </p>
-      </li>
+
       <li>
         <span class="thesis-grid__number">V</span>
         <p>
-          “Entre vós não deve ser assim” é uma crítica permanente à dominação
-          espiritual.
+          Instituições podem amplificar desordens que já habitam a pessoa humana.
         </p>
       </li>
       <li>
         <span class="thesis-grid__number">VI</span>
         <p>
-          A minoridade franciscana é uma recusa espiritual da centralidade e da
-          dominação.
+          A graça de Deus não apaga magicamente a condição humana ferida; ela a ilumina,
+          sustenta e chama à conversão.
         </p>
       </li>
     </ol>
@@ -204,28 +199,23 @@ const year = toRoman(new Date().getFullYear());
     <ol class="future-list">
       <li>
         <span class="future-list__title">
-          A concupiscência do poder recebe menos vigilância espiritual do que a
-          concupiscência sexual
+          A criança, o adulto e a mesma desordem
         </span>
       </li>
       <li>
-        <span class="future-list__title">Autoridade cristã e posse da consciência</span>
-      </li>
-      <li>
-        <span class="future-list__title">O abuso espiritual como falsa piedade</span>
+        <span class="future-list__title">O desejo de ser o centro</span>
       </li>
       <li>
         <span class="future-list__title">
-          <span class="nowrap">A <em>libido dominandi</em></span> e a
-          espiritualização do controle
+          A estranha persistência do egoísmo
         </span>
       </li>
       <li>
-        <span class="future-list__title">São Francisco e a recusa do centro</span>
+        <span class="future-list__title">Obediência e responsabilidade após o pecado original</span>
       </li>
       <li>
         <span class="future-list__title">
-          Como exercer autoridade cristã sem absorver a consciência do outro?
+          Como instituições refletem desordens já presentes na pessoa humana?
         </span>
       </li>
     </ol>
@@ -238,32 +228,31 @@ const year = toRoman(new Date().getFullYear());
       <div class="section-heading__rule"><span>Direção intelectual</span></div>
       <h2>O que se investiga aqui</h2>
       <p>
-        Como o pecado original, a concupiscência, o orgulho e a <em>libido dominandi</em>
-        atravessam autoridade, instituições eclesiais, espiritualidade e vida comum.
+        Como a desordem introduzida pelo pecado original continua se manifestando
+        na consciência, nos desejos, nas relações, na cultura e nas instituições.
       </p>
     </header>
 
     <ul class="topics-grid" aria-label="Temas centrais">
       <li>
-        <span class="topics-grid__name">Autoridade na Igreja</span>
+        <span class="topics-grid__name">Antropologia do pecado original</span>
         <span class="topics-grid__count">Em ensaio</span>
         <p class="topics-grid__hint">
-          O problema não é a existência da hierarquia, mas sua tendência à
-          apropriação do outro.
+          A investigação começa pela condição humana, antes de chegar às estruturas.
         </p>
       </li>
       <li>
-        <span class="topics-grid__name">Consciência e foro interno</span>
+        <span class="topics-grid__name">Consciência e liberdade</span>
         <span class="topics-grid__count">Em ensaio</span>
         <p class="topics-grid__hint">
-          Existe diferença entre direção espiritual e substituição da consciência.
+          Como a liberdade permanece real e, ao mesmo tempo, inclinada à fuga do bem.
         </p>
       </li>
       <li>
-        <span class="topics-grid__name">Libido dominandi</span>
+        <span class="topics-grid__name">Desejo e centralidade</span>
         <span class="topics-grid__count">Em ensaio</span>
         <p class="topics-grid__hint">
-          O orgulho não deseja apenas prazer; deseja centralidade.
+          O orgulho não deseja apenas prazer ou poder; deseja ocupar o centro.
         </p>
       </li>
     </ul>

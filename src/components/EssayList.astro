@@ -3,10 +3,9 @@ import type { CollectionEntry } from "astro:content";
 
 interface Props {
   essays: CollectionEntry<"essays">[];
-  startIndex?: number;
 }
 
-const { essays, startIndex = 1 } = Astro.props;
+const { essays } = Astro.props;
 
 const monthFormatter = new Intl.DateTimeFormat("pt-BR", {
   month: "long",
@@ -34,10 +33,10 @@ const toRoman = (num: number): string => {
 
 <ol class="essay-list" role="list">
   {
-    essays.map((essay, idx) => (
+    essays.map((essay) => (
       <li class="essay-list__item">
         <div class="essay-list__date">
-          <span class="essay-list__number">№ {toRoman(startIndex + idx)}</span>
+          <span class="essay-list__number">№ {toRoman(essay.data.sequence)}</span>
           <span>{dayFormatter.format(essay.data.pubDate)} {monthFormatter.format(essay.data.pubDate)}</span>
         </div>
         <div>
