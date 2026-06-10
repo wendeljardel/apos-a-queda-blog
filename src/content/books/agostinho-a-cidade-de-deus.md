@@ -1,7 +1,7 @@
 ---
 title: "A Cidade de Deus"
 author: "Santo Agostinho"
-description: "Referência fundamental para pensar amor ordenado, poder e a libido dominandi como deformação do desejo após a Queda."
+description: "Referência fundamental para pensar amor ordenado, poder e a libido dominandi como deformação do desejo após o pecado original."
 categories:
   - Pecado Original
   - Poder

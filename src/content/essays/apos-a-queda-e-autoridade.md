@@ -1,6 +1,7 @@
 ---
 title: "O pecado Original e a Autoridade"
-description: "Manifesto inaugural do projeto: uma conversa sobre autoridade, consciência e a passagem do serviço para a dominação."
+description: "Uma conversa sobre autoridade, consciência e a passagem do serviço para a dominação."
+sequence: 1
 pubDate: 2026-05-27
 categories:
   - Pecado Original
@@ -10,7 +11,7 @@ categories:
 readingTime: "7 min"
 draft: false
 heroImage: "/images/ensaio-queda.png"
-heroImageAlt: "Gravura sépia: gesto de lava-pés em capítulo de pedra, com cadeira episcopal vazia ao fundo"
+heroImageAlt: "Pintura sacra popular brasileira: gesto de lava-pés em uma capela caiada com porta azul e terra molhada depois da chuva"
 ---
 
 Vivemos uma época em que abusos de autoridade são constantemente denunciados. Seja na política, nas empresas, nas famílias, no militarismo, nas escolas ou dentro da própria Igreja surgem relatos de relações marcadas por manipulação, controle, humilhação e dominação.
@@ -31,7 +32,7 @@ A tradição católica sempre reconheceu a legitimidade da autoridade humana, in
 
 A questão que motiva estes ensaios é outra:
 
-> O que acontece com a autoridade **após o Pecado Original**, após A Queda?
+> O que acontece com as relações humanas **após o pecado original**?
 
 ---
 
@@ -64,7 +65,7 @@ Essa tendência não desaparece automaticamente em ambientes religiosos. Pelo co
 
 ## Como este projeto nasce
 
-Este projeto nasce como uma tentativa de pensar essas questões à luz da antropologia católica, especialmente a partir da doutrina do pecado original.
+Este projeto nasce como uma tentativa de pensar essas e outras questões à luz da antropologia católica, especialmente a partir da doutrina do pecado original.
 
 Não como denúncia precipitada.
 Não como reação ideológica.
@@ -74,16 +75,15 @@ Uma tentativa de refletir sobre:
 
 - autoridade e serviço;
 - consciência e obediência;
-- poder e espiritualidade;
-- orgulho e dominação;
+- egoísmo e violência;
 - liberdade e direção espiritual;
-- relações humanas após a Queda.
+- relações humanas depois do pecado original.
 
 ---
 
 ## A pergunta
 
-Talvez a pergunta central deste projeto seja simples:
+Uma pergunta inicial para esse projeto é bem simples:
 
 > Como exercer autoridade sem transformar o outro em posse?
 

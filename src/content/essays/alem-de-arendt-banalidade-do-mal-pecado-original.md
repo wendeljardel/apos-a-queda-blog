@@ -1,6 +1,7 @@
 ---
 title: "Além de Arendt: a banalidade do mal é a manifestação sociopolítica observável do pecado original"
 description: "Um ensaio sobre Hannah Arendt, a banalidade do mal e a antropologia católica do pecado original."
+sequence: 3
 pubDate: 2026-05-27
 categories:
   - Pecado Original
@@ -10,7 +11,7 @@ categories:
 readingTime: "8 min"
 draft: true
 heroImage: "/images/arendt-banalidade-mal.png"
-heroImageAlt: "Gravura sépia: funcionário escrevendo em um salão burocrático escuro, com uma sombra ampliada ao fundo e luz entrando por uma porta"
+heroImageAlt: "Imagem editorial sobre responsabilidade moral, burocracia e pecado original"
 ---
 
 Hannah Arendt viu algo real. Ao acompanhar o julgamento de Adolf Eichmann em Jerusalém, ela percebeu que o mal moderno nem sempre se apresenta com rosto demoníaco, grandeza trágica ou consciência explícita de perversidade.

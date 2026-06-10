@@ -1,16 +1,17 @@
 ---
 title: "Antes da Intenção: o mal que antecede a escolha"
 description: "Uma criança empurra outra do alto de um escorregador e sai como se nada tivesse acontecido. O que esse gesto revela sobre a condição humana antes da razão, antes da moral, antes da escolha deliberada?"
-pubDate: 2026-06-29
+sequence: 2
+pubDate: 2026-06-09
 categories:
   - Pecado Original
   - Antropologia Católica
   - Fomes Peccati
-  - Inocência e Queda
+  - Inocência e Pecado Original
 readingTime: "7 min"
 draft: false
 heroImage: "/images/ensaio-crianca-e-a-queda.png"
-heroImageAlt: "Gravura sépia em estilo antigo: duas crianças em um escorregador de madeira em um jardim murado, com uma pequena brasa junto às raízes e uma imagem sacra ao fundo"
+heroImageAlt: "Pintura sacra popular brasileira: duas crianças em um escorregador de madeira junto a uma capela caiada, terra molhada, vegetação verde e uma pequena brasa simbólica"
 ---
 
 
@@ -68,9 +69,9 @@ A diferença entre a criança e o adulto não está na condição, está na resp
 
 Se a inclinação ao mal é estrutural e anterior à escolha o que isso significa para a forma como educamos, lideramos, exercemos autoridade e construímos comunidade?
 
-O pecado original é uma condição presente que aparece toda vez que uma criança empurra outra e sai andando como se nada tivesse acontecido.
+O gesto da criança não revela uma culpa, mas uma condição. E essa condição não desaparece com a idade, ela apenas assume formas mais complexas.
 
-E toda vez que um adulto faz o mesmo, e também sai andando.
+A criança empurra a outra do alto do escorregador e o adulto, muitas vezes, faz o mesmo e também segue andando.
 
 ---
 

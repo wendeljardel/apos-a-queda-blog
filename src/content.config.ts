@@ -7,6 +7,7 @@ const essayCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    sequence: z.number().int().positive(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     categories: z.array(z.string()).default([]),
