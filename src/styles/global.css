@@ -532,14 +532,51 @@ figcaption {
 .featured__figure {
   margin: 0;
   border: 1px solid var(--color-rule);
-  background: var(--color-paper-warm);
+  background:
+    linear-gradient(135deg, rgba(217, 169, 78, 0.18), transparent 34%),
+    linear-gradient(315deg, rgba(20, 106, 140, 0.1), transparent 38%),
+    var(--color-paper-warm);
+  padding: 0.42rem;
+  position: relative;
   box-shadow: 0 18px 36px -24px rgba(36, 31, 24, 0.34);
+}
+
+.featured__figure::before,
+.essay__hero::before,
+.about-figure::before {
+  content: "";
+  position: absolute;
+  inset: 0.22rem;
+  border: 1px solid color-mix(in srgb, var(--color-rule) 58%, transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.featured__figure::after,
+.essay__hero::after,
+.about-figure::after {
+  content: "";
+  position: absolute;
+  inset: 0.58rem;
+  background:
+    linear-gradient(var(--color-anil), var(--color-anil)) top left / 1.15rem 1px no-repeat,
+    linear-gradient(var(--color-anil), var(--color-anil)) top left / 1px 1.15rem no-repeat,
+    linear-gradient(var(--color-terracotta), var(--color-terracotta)) top right / 1.15rem 1px no-repeat,
+    linear-gradient(var(--color-terracotta), var(--color-terracotta)) top right / 1px 1.15rem no-repeat,
+    linear-gradient(var(--color-juazeiro), var(--color-juazeiro)) bottom left / 1.15rem 1px no-repeat,
+    linear-gradient(var(--color-juazeiro), var(--color-juazeiro)) bottom left / 1px 1.15rem no-repeat,
+    linear-gradient(var(--color-gold), var(--color-gold)) bottom right / 1.15rem 1px no-repeat,
+    linear-gradient(var(--color-gold), var(--color-gold)) bottom right / 1px 1.15rem no-repeat;
+  opacity: 0.52;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .featured__figure img {
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
+  border: 1px solid color-mix(in srgb, var(--color-rule-soft) 72%, transparent);
 }
 
 .featured__body {
@@ -826,13 +863,20 @@ figcaption {
   max-width: 34rem;
   margin-inline: auto;
   border: 1px solid var(--color-rule);
-  background: var(--color-paper-warm);
+  background:
+    linear-gradient(135deg, rgba(217, 169, 78, 0.16), transparent 34%),
+    linear-gradient(315deg, rgba(64, 111, 56, 0.1), transparent 38%),
+    var(--color-paper-warm);
+  padding: 0.42rem;
+  position: relative;
+  box-shadow: 0 14px 32px -26px rgba(36, 31, 24, 0.34);
 }
 
 .essay__hero img {
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
+  border: 1px solid color-mix(in srgb, var(--color-rule-soft) 72%, transparent);
 }
 
 .tag-list {
@@ -950,6 +994,9 @@ figcaption {
   grid-template-columns: repeat(3, 1fr);
   border: 1px solid var(--color-rule);
   background: linear-gradient(135deg, var(--color-paper-warm), color-mix(in srgb, var(--color-paper-warm) 82%, var(--color-juazeiro) 18%));
+  box-shadow:
+    inset 0 0 0 0.35rem color-mix(in srgb, var(--color-paper-warm) 78%, transparent),
+    0 16px 36px -32px rgba(36, 31, 24, 0.3);
 }
 
 .thesis-grid li {
@@ -960,6 +1007,20 @@ figcaption {
   display: grid;
   align-content: space-between;
   gap: 1.4rem;
+  position: relative;
+}
+
+.thesis-grid li::before,
+.topics-grid li::before {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-anil) 55%, transparent);
+  border-left: 1px solid color-mix(in srgb, var(--color-anil) 55%, transparent);
+  position: absolute;
+  top: 0.62rem;
+  left: 0.62rem;
+  opacity: 0.55;
 }
 
 .thesis-grid li:nth-child(3n) {
@@ -1039,6 +1100,7 @@ figcaption {
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 0;
   border: 1px solid var(--color-rule);
+  box-shadow: 0 16px 36px -32px rgba(36, 31, 24, 0.28);
 }
 
 .topics-grid li {
@@ -1165,12 +1227,20 @@ figcaption {
 .about-figure {
   margin-block: 2rem;
   border: 1px solid var(--color-rule);
+  background:
+    linear-gradient(135deg, rgba(195, 60, 114, 0.08), transparent 36%),
+    linear-gradient(315deg, rgba(20, 106, 140, 0.1), transparent 38%),
+    var(--color-paper-warm);
+  padding: 0.42rem;
+  position: relative;
+  box-shadow: 0 14px 32px -26px rgba(36, 31, 24, 0.34);
 }
 
 .about-figure img {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  border: 1px solid color-mix(in srgb, var(--color-rule-soft) 72%, transparent);
 }
 
 .about-figure figcaption {
