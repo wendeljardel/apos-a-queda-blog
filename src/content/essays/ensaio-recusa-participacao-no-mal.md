@@ -14,11 +14,11 @@ draft: false
 
 Existe uma tendência recorrente, inclusive nos ambientes mais instruídos e politizados, de explicar o mal a partir de causas externas ao indivíduo. Quando se discutem desigualdades, crimes, degradação social ou comportamentos destrutivos, a atenção costuma se voltar para estruturas econômicas, culturais, políticas ou históricas.
 
-Essas explicações possuem seu valor e muitas vezes são indispensáveis. Mesmo assim, chama atenção o fato de que raramente a responsabilidade pessoal ocupa o centro da análise. O olhar se dirige quase totalmente para aquilo que moldou o indivíduo — e mais raramente para o indivíduo que agiu.
+Essas explicações possuem seu valor e muitas vezes são indispensáveis. Mesmo assim, chama atenção o fato de que raramente a responsabilidade pessoal ocupa o centro da análise. O olhar se dirige quase totalmente para aquilo que moldou o indivíduo e raramente para o indivíduo que agiu.
 
 ---
 
-## I. "A mulher que me deste..."
+## I. "Ninguém negou o ato"
 
 Adão diante de Deus não nega o que fez, mas atribui a culpa a outro:
 
@@ -40,13 +40,13 @@ Recentemente, minha cidade aumentou consideravelmente a fiscalização de trâns
 
 Dentre os comentários, qual se tornou o mais frequente?
 
-Justamente sobre o excesso de fiscalização do órgão da prefeitura, cuja principal intenção seria a arrecadação. Ao trazer esse fato, não quero eximir a culpa do órgão fiscalizador, nem discutir se a fiscalização é excessiva ou não. Quero observar que a grande maioria dos comentários tratou de tirar a culpa do condutor e colocá-la exclusivamente na arrecadação estatal.
+Justamente sobre o excesso de fiscalização do órgão da prefeitura, cuja principal intenção seria a arrecadação. Ao trazer esse fato, não quero eximir a culpa do órgão fiscalizador, nem discutir se a fiscalização é excessiva ou não. Quero observar que a grande maioria dos comentários tratou de tirar a culpa do erro do condutor e colocá-la exclusivamente na arrecadação estatal.
 
-Se, por um lado, em casos de acidentes de trânsito normalmente se culpa a falta de fiscalização, quando há fiscalização culpa-se o excesso dela e o interesse financeiro governamental. Essa desculpa do culpado exterior não é tão diferente daquela apresentada no princípio.
+Se por um lado, em casos de acidentes de trânsito normalmente se culpa a falta de fiscalização, quando há fiscalização culpa-se o excesso dela e o interesse financeiro governamental. Essa desculpa do culpado exterior não é tão diferente daquela apresentada no Gênesis.
 
 ---
 
-## III. O mesmo gesto numa escala totalmente diferente
+## III. O álcool na cabeça
 
 Numa conversa documentada após um crime grave, um dos envolvidos foi confrontado sobre o que havia acontecido. Ele não negou, mas disse:
 
@@ -56,7 +56,9 @@ Independentemente do desfecho judicial, a estrutura dessa fala merece atenção.
 
 O padrão é similar ao encontrado em Gênesis 3. Nem Adão, nem Eva negaram o ato de comer o fruto proibido, mas terceirizam a culpa. O envolvido no crime não negou o ato: disse que foi por conta do álcool.
 
-Nesses casos, a externalização não funciona como mentira sobre o que aconteceu, mas como apagamento de quem agiu. A pessoa que escolheu, que cometeu o ato, foi removida da narrativa. O que resta é uma força exterior: a mulher, a serpente, a fiscalização excessiva, o álcool.
+Nesses casos, a externalização não funciona como mentira sobre o que aconteceu, mas como apagamento do autor. A pessoa que escolheu, que cometeu o ato, foi removida da narrativa. O que resta é uma força exterior: a mulher, a serpente, a fiscalização excessiva, o álcool.
+
+> Se esse gesto é tão antigo e recorrente, o que explica sua persistência?
 
 ---
 
