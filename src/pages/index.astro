@@ -4,6 +4,7 @@ import EssayList from "@components/EssayList.astro";
 import Ornament from "@components/Ornament.astro";
 import CrossMark from "@components/CrossMark.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { formatPubDate, pubDateToDatetime } from "@utils/pubDate";
 
 const allEssays = (await getCollection("essays", ({ data }) => !data.draft))
   .sort((a, b) => a.data.sequence - b.data.sequence);
@@ -11,13 +12,7 @@ const allEssays = (await getCollection("essays", ({ data }) => !data.draft))
 const featured = allEssays[0];
 const archive = allEssays.slice(1);
 
-const featuredDate = featured
-  ? new Intl.DateTimeFormat("pt-BR", {
-      day: "2-digit",
-      month: "long",
-      year: "numeric",
-    }).format(featured.data.pubDate)
-  : "";
+const featuredDate = featured ? formatPubDate(featured.data.pubDate) : "";
 
 const year = new Date().getFullYear();
 
@@ -92,7 +87,7 @@ const toRoman = (num: number): string => {
             <p class="featured__lede">{featured.data.description}</p>
 
             <p class="featured__meta">
-              <time datetime={featured.data.pubDate.toISOString()}>{featuredDate}</time>
+              <time datetime={pubDateToDatetime(featured.data.pubDate)}>{featuredDate}</time>
               <span>·</span>
               <span>{featured.data.readingTime} de leitura</span>
             </p>
@@ -139,7 +134,7 @@ const toRoman = (num: number): string => {
   <section aria-label="Hipóteses de trabalho">
     <header class="section-heading">
       <div class="section-heading__rule"><span>Hipóteses</span></div>
-      <h2>Frases que orientam o arquivo</h2>
+      <h2>Frases que orientam o projeto</h2>
       <p>
         Formulações provisórias para pensar a condição humana ferida pelo pecado
         original, antes de falar sobre política, estruturas sociais ou psicologia.

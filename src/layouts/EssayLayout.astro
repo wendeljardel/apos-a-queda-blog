@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Ornament from "@components/Ornament.astro";
+import { formatPubDate, pubDateToDatetime } from "@utils/pubDate";
 
 interface Props {
   title: string;
@@ -24,11 +25,7 @@ const {
   heroImageAlt,
 } = Astro.props;
 
-const formattedDate = new Intl.DateTimeFormat("pt-BR", {
-  day: "2-digit",
-  month: "long",
-  year: "numeric",
-}).format(pubDate);
+const formattedDate = formatPubDate(pubDate);
 
 const toRoman = (num: number): string => {
   const map: [number, string][] = [
@@ -55,7 +52,7 @@ const toRoman = (num: number): string => {
       <h1 class="essay__title">{title}</h1>
       <p class="essay__lede">{description}</p>
       <div class="essay__meta">
-        <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+        <time datetime={pubDateToDatetime(pubDate)}>{formattedDate}</time>
         <span>{readingTime} de leitura</span>
       </div>
       {

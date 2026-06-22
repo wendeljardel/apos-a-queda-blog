@@ -14,19 +14,13 @@ const isCurrent = (href: string) => {
   if (href === "/") return currentPath === "/";
   return currentPath.startsWith(href);
 };
-
-const now = new Date();
-const ptDate = new Intl.DateTimeFormat("pt-BR", {
-  day: "2-digit",
-  month: "long",
-}).format(now);
 ---
 
 <header class="site-header">
   <div class="container--wide site-header__inner">
     <p class="site-header__meta" aria-label="Edição corrente">
       <span class="site-header__meta-line"></span>
-      <span class="site-header__meta-sub">{ptDate}</span>
+      <span class="site-header__meta-sub" data-current-date>Hoje</span>
     </p>
 
     <a class="site-header__brand" href="/" aria-label="Após a Queda — página inicial">
@@ -46,3 +40,15 @@ const ptDate = new Intl.DateTimeFormat("pt-BR", {
     </nav>
   </div>
 </header>
+
+<script is:inline>
+  (() => {
+    const dateLabel = document.querySelector("[data-current-date]");
+    if (!dateLabel) return;
+
+    dateLabel.textContent = new Intl.DateTimeFormat("pt-BR", {
+      day: "2-digit",
+      month: "long",
+    }).format(new Date());
+  })();
+</script>
