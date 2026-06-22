@@ -2,7 +2,7 @@
 title: "A recusa humana em reconhecer a própria participação no mal"
 description: "Desde o Éden, o ser humano aponta para fora de si quando precisa explicar o mal. Da serpente ao sistema, da fiscalização ao álcool, a primeira desculpa da história ainda é a última."
 sequence: 3
-pubDate: 2026-06-15
+pubDate: 2026-06-22
 categories:
   - Pecado Original
   - Concupiscência
