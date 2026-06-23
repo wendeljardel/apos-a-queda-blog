@@ -10,6 +10,8 @@ categories:
   - Antropologia Católica
 readingTime: "10 min"
 draft: false
+heroImage: "/images/ensaio-recusa-participacao-no-mal.png"
+heroImageAlt: "Pintura sacra popular brasileira: Adão e Eva diante da mangueira, serpente no tronco, sertão verde na chuva com borboletas e passarinhos ao fundo"
 ---
 
 Existe uma tendência recorrente, inclusive nos ambientes mais instruídos e politizados, de explicar o mal a partir de causas externas ao indivíduo. Quando se discutem desigualdades, crimes, degradação social ou comportamentos destrutivos, a atenção costuma se voltar para estruturas econômicas, culturais, políticas ou históricas.
