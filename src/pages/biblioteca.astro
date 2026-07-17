@@ -57,7 +57,7 @@ const magisterium = [
 
 <BaseLayout
   title="Biblioteca"
-  description="Referências da Tradição católica e interlocutores para pensar pecado original, antropologia cristã e condição humana."
+  description="Autores e documentos com os quais o Após a Queda lê o pecado original e a vida comum."
 >
   <header class="page-intro">
     <p class="essay__kicker">
@@ -66,8 +66,8 @@ const magisterium = [
     </p>
     <h1 class="page-intro__title">Biblioteca</h1>
     <p class="page-intro__sub">
-      Autores, obras e documentos que sustentam a investigação sobre pecado
-      original, condição humana, consciência, liberdade e vida comum.
+      Livros, mestres e documentos do Magistério com os quais estes ensaios
+      conversam.
     </p>
   </header>
 
@@ -75,14 +75,14 @@ const magisterium = [
 
   <section>
     <header class="section-heading">
-      <div class="section-heading__rule"><span>Obras comentadas</span></div>
-      <h2>Leituras de base</h2>
+      <div class="section-heading__rule"><span>Obras</span></div>
+      <h2>Comentadas neste caderno</h2>
     </header>
 
     {
       books.length === 0 ? (
         <p class="page-intro__sub" style="text-align:center">
-          Nenhuma obra comentada ainda.
+          Ainda não há obras comentadas aqui.
         </p>
       ) : (
         <ol class="references">
@@ -116,12 +116,12 @@ const magisterium = [
 
   <section>
     <header class="section-heading">
-      <div class="section-heading__rule"><span>Núcleo principal</span></div>
-      <h2>Referências de base</h2>
-      <p>A raiz da investigação — pecado original, liberdade, consciência e natureza humana.</p>
+      <div class="section-heading__rule"><span>Núcleo</span></div>
+      <h2>Vozes primeiras</h2>
+      <p>Quem mais marca a leitura do pecado original neste projeto.</p>
     </header>
 
-    <ul class="topics-grid" aria-label="Padres e Doutores da Igreja">
+    <ul class="topics-grid" aria-label="Autores do núcleo">
       {
         fathersAndDoctors.map((entry) => (
           <li>
@@ -137,9 +137,9 @@ const magisterium = [
 
   <section>
     <header class="section-heading">
-      <div class="section-heading__rule"><span>Segundo círculo</span></div>
-      <h2>Mestres e interlocutores próximos</h2>
-      <p>Vozes que ajudam a pensar natureza, graça, consciência e responsabilidade.</p>
+      <div class="section-heading__rule"><span>Próximos</span></div>
+      <h2>Mestres e companheiros</h2>
+      <p>Tomás, Newman, Guardini, de Lubac — natureza, graça, consciência.</p>
     </header>
 
     <ul class="topics-grid" aria-label="Mestres modernos">
@@ -158,9 +158,9 @@ const magisterium = [
 
   <section>
     <header class="section-heading">
-      <div class="section-heading__rule"><span>Documentos eclesiais</span></div>
-      <h2>Magistério de referência</h2>
-      <p>Textos conciliares e papais que balizam a leitura.</p>
+      <div class="section-heading__rule"><span>Magistério</span></div>
+      <h2>Documentos</h2>
+      <p>Concílio e textos papais que balizam a leitura.</p>
     </header>
 
     <ol class="references">
@@ -187,10 +187,10 @@ const magisterium = [
   <section>
     <header class="section-heading">
       <div class="section-heading__rule"><span>Diálogo</span></div>
-      <h2>Interlocutores</h2>
+      <h2>Fora da casa</h2>
       <p>
-        Pensadores não católicos relidos a partir do horizonte da fé — em diálogo
-        e em tensão fecunda.
+        Autores não católicos que ajudam a nomear fenômenos — lidos sem
+        entregar o terreno da fé.
       </p>
     </header>
 

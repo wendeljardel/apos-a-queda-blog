@@ -8,73 +8,59 @@ const essays = await getCollection("essays", ({ data }) => !data.draft);
 const topics = [
   {
     name: "Pecado Original",
-    hint:
-      "A ferida original como chave para compreender desejos, consciência, liberdade e vida comum.",
+    hint: "A ferida de origem como chave para ler desejos, culpa e liberdade.",
   },
   {
     name: "Antropologia Católica",
-    hint:
-      "A análise começa pela condição humana antes de chegar às estruturas sociais e políticas.",
+    hint: "O que o homem é — e o que ficou ferido — segundo a fé da Igreja.",
   },
   {
     name: "Consciência",
-    hint:
-      "A consciência pode reconhecer a verdade, mas também fugir dela quando a responsabilidade pesa.",
+    hint: "Onde a verdade ainda fala — e onde se foge dela.",
   },
   {
     name: "Liberdade",
-    hint:
-      "A liberdade permanece real depois do pecado original, mas ferida, inclinada e necessitada de graça.",
+    hint: "Real, mas inclinada; capaz do bem e pronta a se esquivar.",
   },
   {
     name: "Desejo",
-    hint:
-      "O desejo humano pode buscar o bem, mas também centralidade, domínio, posse e isenção de culpa.",
+    hint: "Do bem ao centro do palco: o que a vontade busca de fato.",
   },
   {
     name: "Formação Moral",
-    hint:
-      "Educar é reconhecer a inclinação ao mal sem desesperar da graça e da liberdade.",
+    hint: "Educar sem ingenuidade: a inclinação ao mal e a graça.",
   },
   {
     name: "Natureza Ferida",
-    hint:
-      "O pecado original não é apenas passado: é uma condição presente que aparece no cotidiano.",
+    hint: "Não só um passado distante — uma condição que aparece no cotidiano.",
   },
   {
     name: "Autoridade",
-    hint:
-      "A autoridade continua importante, mas como uma expressão entre outras da condição humana ferida.",
+    hint: "Quando o serviço vira domínio, e o que isso revela do coração.",
   },
   {
     name: "Abuso Espiritual",
-    hint:
-      "O abuso espiritual raramente começa como malícia explícita; muitas vezes nasce de paternalismo e excesso de tutela.",
+    hint: "Tutela demais, paternalismo e o mal que se disfarça de cuidado.",
   },
   {
     name: "São Francisco",
-    hint:
-      "A minoridade franciscana é uma recusa espiritual da centralidade e da dominação.",
+    hint: "Minoridade como recusa de ocupar o centro.",
   },
   {
     name: "Poder",
-    hint:
-      "O poder amplifica desordens que já habitam a pessoa humana.",
+    hint: "O poder não inventa a desordem; costuma só ampliá-la.",
   },
   {
     name: "Igreja",
-    hint:
-      "Mesmo instituições santas permanecem habitadas por seres humanos caídos.",
+    hint: "Santa e feita de pecadores — e o que isso exige de nós.",
   },
   {
     name: "Relações Humanas",
-    hint:
-      "Depois do pecado original, relações humanas podem tender ao egoísmo, à posse e à instrumentalização.",
+    hint: "Egoísmo, posse e o outro tratado como meio.",
   },
   {
     name: "Notas de Leitura",
-    hint:
-      "Conceitos, citações e hipóteses ainda em forma de caderno.",
+    hint: "Citações, conceitos e apontamentos de caderno.",
   },
 ];
 
@@ -87,7 +73,7 @@ const allCategories = [
 
 const hintFor = (category: string) =>
   topics.find((topic) => topic.name === category)?.hint ??
-  "Tema em desenvolvimento no arquivo.";
+  "Ainda sem nota própria neste mapa.";
 
 const countFor = (category: string) =>
   essays.filter((essay) => essay.data.categories.includes(category)).length;
@@ -95,15 +81,14 @@ const countFor = (category: string) =>
 
 <BaseLayout
   title="Temas"
-  description="Categorias iniciais de investigação do projeto Após a Queda."
+  description="Temas que atravessam os ensaios de Após a Queda."
 >
   <header class="page-intro">
     <p class="essay__kicker">Mapa de leitura</p>
     <h1 class="page-intro__title">Temas</h1>
     <p class="page-intro__sub">
-      Os ensaios se organizam ao redor de hipóteses sobre pecado original,
-      antropologia católica, consciência, liberdade, desejo, formação moral e vida
-      comum depois do pecado original.
+      Filamentos que voltam nos ensaios: pecado original, consciência, desejo,
+      autoridade, formação moral.
     </p>
   </header>
 
@@ -117,7 +102,7 @@ const countFor = (category: string) =>
           <li>
             <span class="topics-grid__name">{category}</span>
             <span class="topics-grid__count">
-              {count === 0 ? "Em ensaio" : `${count} texto${count === 1 ? "" : "s"}`}
+              {count === 0 ? "—" : `${count} texto${count === 1 ? "" : "s"}`}
             </span>
             <p class="topics-grid__hint" set:html={hintFor(category)} />
           </li>
